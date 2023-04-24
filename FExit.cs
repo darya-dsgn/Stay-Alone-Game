@@ -67,7 +67,7 @@ namespace Stay_Alone_интерфейс
             PBNo.Top = (int)(FMainMenu.KHeight * NoTop);
             PBNo.Left = (int)(FMainMenu.KWidth * NoLeft);
             PBNo.Refresh();
-
+            //dfd
         }
     }
 
