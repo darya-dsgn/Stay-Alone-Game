@@ -55,6 +55,7 @@ namespace Stay_Alone_интерфейс
             FormHeight = Height;
             FormWidth = Width;
             KWidth = 1;
+            KHeight = 1;
 
             NameHeight = PBName.Height;
             NameWidth = PBName.Width;
