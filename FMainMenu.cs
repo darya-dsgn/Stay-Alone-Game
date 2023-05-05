@@ -51,6 +51,69 @@ namespace Stay_Alone_интерфейс
 
         private void FMainMenu_Load(object sender, EventArgs e)
         {
+            
+           
+
+            try  // Загружаем картинки из папки Images при запуске EXE
+            {
+                TP0_Main.BackgroundImage = Image.FromFile("Images\\Background2.png");
+                PBName.Image = Image.FromFile("Images\\StayAlone.png");
+                PBPlay.Image = Image.FromFile("Images\\Play.png");
+                PBSettings.Image = Image.FromFile("Images\\Settings.png");
+                PBExit.Image = Image.FromFile("Images\\Exit.png");
+                
+                TP1_Exit.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                PBWindow.Image = Image.FromFile("Images\\Window.png");
+                PBYes.Image = Image.FromFile("Images\\CheckMark.png");
+                PBNo.Image = Image.FromFile("Images\\Cross.png");
+                
+                TP2_SettingsGeneral.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                PBGeneralL.Image = Image.FromFile("Images\\GeneralWithLine.png");
+                PBGraphics1.Image = Image.FromFile("Images\\Graphics.png");
+                PBControl1.Image = Image.FromFile("Images\\Gontrol.png");
+                PBBack1.Image = Image.FromFile("Images\\Back.png");
+                PBApply1.Image = Image.FromFile("Images\\Apply.png");
+                PBLanguage.Image = Image.FromFile("Images\\Language.png");
+                PBDifficulty.Image = Image.FromFile("Images\\Difficulty.png");
+                PBSensitivity.Image = Image.FromFile("Images\\Sensitivity.png");
+                PBSubtitles.Image = Image.FromFile("Images\\Subtitles.png");
+                PBVolume.Image = Image.FromFile("Images\\Volume.png");
+                PBReg.Image = Image.FromFile("Images\\VolumeReg.png");
+
+                TP3_SettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                PBGeneral1.Image = Image.FromFile("Images\\General.png");
+                PBGraphicsL.Image = Image.FromFile("Images\\GraphicsWithLine.png");
+                PBControl2.Image = Image.FromFile("Images\\Gontrol.png");
+                PBBack2.Image = Image.FromFile("Images\\Back.png");
+                PBApply2.Image = Image.FromFile("Images\\Apply.png");
+                PBResolution.Image = Image.FromFile("Images\\Resolution.png");
+                PBTextureQuality.Image = Image.FromFile("Images\\TextureQuality.png");
+                PBTextureFiltering.Image = Image.FromFile("Images\\TextureFiltering.png");
+                PBShadowQuality.Image = Image.FromFile("Images\\ShadowQuality.png");
+                PBEffectQuality.Image = Image.FromFile("Images\\EffectQuality.png");
+                PBSmoothing.Image = Image.FromFile("Images\\Smoothing.png");
+                PBFullScreen.Image = Image.FromFile("Images\\FullScreen.png");
+
+                TP4_SettingsControl.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                PBGeneral2.Image = Image.FromFile("Images\\General.png");
+                PBGraphics2.Image = Image.FromFile("Images\\Graphics.png");
+                PBControlL.Image = Image.FromFile("Images\\GontrolWithLine.png");
+                PBBack3.Image = Image.FromFile("Images\\Back.png");
+                PBApply3.Image = Image.FromFile("Images\\Apply.png");
+                PBSquat.Image = Image.FromFile("Images\\Squat.png");
+                PBJump.Image = Image.FromFile("Images\\Jump.png");
+                PBAttack.Image = Image.FromFile("Images\\Attack.png");
+                PBMovingForward.Image = Image.FromFile("Images\\MovingForward.png");
+                PBMovingBackwards.Image = Image.FromFile("Images\\MovingBackwards.png");
+                PBMovementLeft.Image = Image.FromFile("Images\\MovementLeft.png");
+                PBMovementRight.Image = Image.FromFile("Images\\MovementRight.png");
+
+            }
+            catch (System.IO.FileNotFoundException) { }
+
+
+
+
             //Получаем исходные координаты формы и всех элементов:
             FormHeight = Height;
             FormWidth = Width;
