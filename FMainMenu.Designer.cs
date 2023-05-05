@@ -172,7 +172,7 @@
             // 
             this.PBExit.BackColor = System.Drawing.Color.Transparent;
             this.PBExit.Image = ((System.Drawing.Image)(resources.GetObject("PBExit.Image")));
-            this.PBExit.Location = new System.Drawing.Point(48, 265);
+            this.PBExit.Location = new System.Drawing.Point(48, 270);
             this.PBExit.Margin = new System.Windows.Forms.Padding(2);
             this.PBExit.Name = "PBExit";
             this.PBExit.Size = new System.Drawing.Size(73, 48);
@@ -185,7 +185,7 @@
             // 
             this.PBSettings.BackColor = System.Drawing.Color.Transparent;
             this.PBSettings.Image = ((System.Drawing.Image)(resources.GetObject("PBSettings.Image")));
-            this.PBSettings.Location = new System.Drawing.Point(48, 229);
+            this.PBSettings.Location = new System.Drawing.Point(48, 234);
             this.PBSettings.Margin = new System.Windows.Forms.Padding(2);
             this.PBSettings.Name = "PBSettings";
             this.PBSettings.Size = new System.Drawing.Size(105, 44);
@@ -198,7 +198,7 @@
             // 
             this.PBPlay.BackColor = System.Drawing.Color.Transparent;
             this.PBPlay.Image = ((System.Drawing.Image)(resources.GetObject("PBPlay.Image")));
-            this.PBPlay.Location = new System.Drawing.Point(48, 180);
+            this.PBPlay.Location = new System.Drawing.Point(48, 185);
             this.PBPlay.Margin = new System.Windows.Forms.Padding(2);
             this.PBPlay.Name = "PBPlay";
             this.PBPlay.Size = new System.Drawing.Size(73, 49);
@@ -224,7 +224,7 @@
             // 
             this.PBNo.BackColor = System.Drawing.Color.Black;
             this.PBNo.Image = ((System.Drawing.Image)(resources.GetObject("PBNo.Image")));
-            this.PBNo.Location = new System.Drawing.Point(312, 144);
+            this.PBNo.Location = new System.Drawing.Point(314, 144);
             this.PBNo.Margin = new System.Windows.Forms.Padding(2);
             this.PBNo.Name = "PBNo";
             this.PBNo.Size = new System.Drawing.Size(54, 54);
@@ -237,7 +237,7 @@
             // 
             this.PBYes.BackColor = System.Drawing.Color.Black;
             this.PBYes.Image = ((System.Drawing.Image)(resources.GetObject("PBYes.Image")));
-            this.PBYes.Location = new System.Drawing.Point(216, 144);
+            this.PBYes.Location = new System.Drawing.Point(218, 144);
             this.PBYes.Margin = new System.Windows.Forms.Padding(2);
             this.PBYes.Name = "PBYes";
             this.PBYes.Size = new System.Drawing.Size(54, 54);
@@ -250,7 +250,7 @@
             // 
             this.PBWindow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBWindow.BackgroundImage")));
             this.PBWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBWindow.Location = new System.Drawing.Point(141, 64);
+            this.PBWindow.Location = new System.Drawing.Point(143, 64);
             this.PBWindow.Name = "PBWindow";
             this.PBWindow.Size = new System.Drawing.Size(300, 180);
             this.PBWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -659,12 +659,13 @@
             // 
             this.PBMovementRight.BackColor = System.Drawing.Color.Transparent;
             this.PBMovementRight.Image = ((System.Drawing.Image)(resources.GetObject("PBMovementRight.Image")));
-            this.PBMovementRight.Location = new System.Drawing.Point(144, 234);
+            this.PBMovementRight.Location = new System.Drawing.Point(145, 234);
             this.PBMovementRight.Name = "PBMovementRight";
             this.PBMovementRight.Size = new System.Drawing.Size(193, 32);
             this.PBMovementRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBMovementRight.TabIndex = 30;
             this.PBMovementRight.TabStop = false;
+            this.PBMovementRight.Click += new System.EventHandler(this.PBMovementRight_Click);
             // 
             // PBApply3
             // 
