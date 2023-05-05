@@ -19,17 +19,78 @@ namespace Stay_Alone_интерфейс
         public float SettingsHeight, SettingsWidth, SettingsTop, SettingsLeft;
         public float ExitHeight, ExitWidth, ExitTop, ExitLeft;
 
+        private void PBNo_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 0;
+        }
+
+        private void PBBack1_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 0;
+        }
+
+        private void PBGraphics1_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 3;
+        }
+
+        private void PBControl1_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 4;
+        }
+
+        private void PBGeneral1_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 2;
+        }
+
+        private void PBControl2_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 4;
+        }
+
+        private void PBBack2_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 0;
+        }
+
+        private void PBGeneral2_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 2;
+        }
+
+        private void PBGraphics2_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 3;
+        }
+
+        private void PBBack3_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 0;
+        }
+
+        private void PBYes_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PBExit_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 1;
+        }
+
+        private void PBSettings_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedIndex = 2;
+        }
+
         private void FMainMenu_Move(object sender, EventArgs e)
         {
             FormTop = Top;
             FormLeft = Left;
         }
 
-        private void PBSettings_Click(object sender, EventArgs e)
-        {
-            Form FSettings = new FSettingsGeneral();
-            FSettings.ShowDialog();
-        }
+        
 
         public float VolumeHeight, VolumeWidth, VolumeTop, VolumeLeft;
         public float VRegHeight, VRegWidth, VRegTop, VRegLeft;
@@ -160,11 +221,7 @@ namespace Stay_Alone_интерфейс
             player.PlayLooping(); // PlayLooping - проигрывает музыку по кругу
         }
 
-        private void PBExit_Click(object sender, EventArgs e)
-        {
-            Form FExit = new FExit();
-            FExit.ShowDialog();
-        }
+        
 
         private void FMainMenu_Resize(object sender, EventArgs e)
         {
