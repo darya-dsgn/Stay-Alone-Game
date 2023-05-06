@@ -159,7 +159,6 @@
             // PBName
             // 
             this.PBName.BackColor = System.Drawing.Color.Transparent;
-            this.PBName.Image = ((System.Drawing.Image)(resources.GetObject("PBName.Image")));
             this.PBName.Location = new System.Drawing.Point(48, 18);
             this.PBName.Margin = new System.Windows.Forms.Padding(2);
             this.PBName.Name = "PBName";
@@ -171,7 +170,6 @@
             // PBExit
             // 
             this.PBExit.BackColor = System.Drawing.Color.Transparent;
-            this.PBExit.Image = ((System.Drawing.Image)(resources.GetObject("PBExit.Image")));
             this.PBExit.Location = new System.Drawing.Point(48, 270);
             this.PBExit.Margin = new System.Windows.Forms.Padding(2);
             this.PBExit.Name = "PBExit";
@@ -184,7 +182,6 @@
             // PBSettings
             // 
             this.PBSettings.BackColor = System.Drawing.Color.Transparent;
-            this.PBSettings.Image = ((System.Drawing.Image)(resources.GetObject("PBSettings.Image")));
             this.PBSettings.Location = new System.Drawing.Point(48, 234);
             this.PBSettings.Margin = new System.Windows.Forms.Padding(2);
             this.PBSettings.Name = "PBSettings";
@@ -197,7 +194,6 @@
             // PBPlay
             // 
             this.PBPlay.BackColor = System.Drawing.Color.Transparent;
-            this.PBPlay.Image = ((System.Drawing.Image)(resources.GetObject("PBPlay.Image")));
             this.PBPlay.Location = new System.Drawing.Point(48, 185);
             this.PBPlay.Margin = new System.Windows.Forms.Padding(2);
             this.PBPlay.Name = "PBPlay";
@@ -208,7 +204,7 @@
             // 
             // TP1_Exit
             // 
-            this.TP1_Exit.BackColor = System.Drawing.SystemColors.MenuText;
+            this.TP1_Exit.BackColor = System.Drawing.Color.Black;
             this.TP1_Exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TP1_Exit.BackgroundImage")));
             this.TP1_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TP1_Exit.Controls.Add(this.PBNo);
@@ -223,8 +219,7 @@
             // PBNo
             // 
             this.PBNo.BackColor = System.Drawing.Color.Black;
-            this.PBNo.Image = ((System.Drawing.Image)(resources.GetObject("PBNo.Image")));
-            this.PBNo.Location = new System.Drawing.Point(314, 144);
+            this.PBNo.Location = new System.Drawing.Point(315, 151);
             this.PBNo.Margin = new System.Windows.Forms.Padding(2);
             this.PBNo.Name = "PBNo";
             this.PBNo.Size = new System.Drawing.Size(54, 54);
@@ -236,8 +231,7 @@
             // PBYes
             // 
             this.PBYes.BackColor = System.Drawing.Color.Black;
-            this.PBYes.Image = ((System.Drawing.Image)(resources.GetObject("PBYes.Image")));
-            this.PBYes.Location = new System.Drawing.Point(218, 144);
+            this.PBYes.Location = new System.Drawing.Point(219, 151);
             this.PBYes.Margin = new System.Windows.Forms.Padding(2);
             this.PBYes.Name = "PBYes";
             this.PBYes.Size = new System.Drawing.Size(54, 54);
@@ -248,9 +242,8 @@
             // 
             // PBWindow
             // 
-            this.PBWindow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBWindow.BackgroundImage")));
             this.PBWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBWindow.Location = new System.Drawing.Point(143, 64);
+            this.PBWindow.Location = new System.Drawing.Point(144, 71);
             this.PBWindow.Name = "PBWindow";
             this.PBWindow.Size = new System.Drawing.Size(300, 180);
             this.PBWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -282,7 +275,6 @@
             // PBBack1
             // 
             this.PBBack1.BackColor = System.Drawing.Color.Transparent;
-            this.PBBack1.Image = ((System.Drawing.Image)(resources.GetObject("PBBack1.Image")));
             this.PBBack1.Location = new System.Drawing.Point(105, 265);
             this.PBBack1.Name = "PBBack1";
             this.PBBack1.Size = new System.Drawing.Size(58, 39);
@@ -294,7 +286,6 @@
             // PBReg
             // 
             this.PBReg.BackColor = System.Drawing.Color.Transparent;
-            this.PBReg.Image = ((System.Drawing.Image)(resources.GetObject("PBReg.Image")));
             this.PBReg.Location = new System.Drawing.Point(184, 233);
             this.PBReg.Margin = new System.Windows.Forms.Padding(0);
             this.PBReg.Name = "PBReg";
@@ -308,7 +299,6 @@
             // 
             this.PBVolume.BackColor = System.Drawing.Color.Transparent;
             this.PBVolume.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PBVolume.ErrorImage")));
-            this.PBVolume.Image = ((System.Drawing.Image)(resources.GetObject("PBVolume.Image")));
             this.PBVolume.InitialImage = ((System.Drawing.Image)(resources.GetObject("PBVolume.InitialImage")));
             this.PBVolume.Location = new System.Drawing.Point(145, 233);
             this.PBVolume.Margin = new System.Windows.Forms.Padding(2);
@@ -321,7 +311,6 @@
             // PBApply1
             // 
             this.PBApply1.BackColor = System.Drawing.Color.Transparent;
-            this.PBApply1.Image = ((System.Drawing.Image)(resources.GetObject("PBApply1.Image")));
             this.PBApply1.Location = new System.Drawing.Point(424, 265);
             this.PBApply1.Name = "PBApply1";
             this.PBApply1.Size = new System.Drawing.Size(71, 39);
@@ -332,7 +321,6 @@
             // PBSubtitles
             // 
             this.PBSubtitles.BackColor = System.Drawing.Color.Transparent;
-            this.PBSubtitles.Image = ((System.Drawing.Image)(resources.GetObject("PBSubtitles.Image")));
             this.PBSubtitles.Location = new System.Drawing.Point(145, 191);
             this.PBSubtitles.Name = "PBSubtitles";
             this.PBSubtitles.Size = new System.Drawing.Size(100, 32);
@@ -343,7 +331,6 @@
             // PBSensitivity
             // 
             this.PBSensitivity.BackColor = System.Drawing.Color.Transparent;
-            this.PBSensitivity.Image = ((System.Drawing.Image)(resources.GetObject("PBSensitivity.Image")));
             this.PBSensitivity.Location = new System.Drawing.Point(145, 153);
             this.PBSensitivity.Name = "PBSensitivity";
             this.PBSensitivity.Size = new System.Drawing.Size(114, 38);
@@ -354,7 +341,6 @@
             // PBDifficulty
             // 
             this.PBDifficulty.BackColor = System.Drawing.Color.Transparent;
-            this.PBDifficulty.Image = ((System.Drawing.Image)(resources.GetObject("PBDifficulty.Image")));
             this.PBDifficulty.Location = new System.Drawing.Point(145, 116);
             this.PBDifficulty.Name = "PBDifficulty";
             this.PBDifficulty.Size = new System.Drawing.Size(100, 33);
@@ -365,7 +351,6 @@
             // PBLanguage
             // 
             this.PBLanguage.BackColor = System.Drawing.Color.Transparent;
-            this.PBLanguage.Image = ((System.Drawing.Image)(resources.GetObject("PBLanguage.Image")));
             this.PBLanguage.Location = new System.Drawing.Point(145, 72);
             this.PBLanguage.Name = "PBLanguage";
             this.PBLanguage.Size = new System.Drawing.Size(100, 38);
@@ -376,7 +361,6 @@
             // PBControl1
             // 
             this.PBControl1.BackColor = System.Drawing.Color.Transparent;
-            this.PBControl1.Image = ((System.Drawing.Image)(resources.GetObject("PBControl1.Image")));
             this.PBControl1.Location = new System.Drawing.Point(393, 14);
             this.PBControl1.Name = "PBControl1";
             this.PBControl1.Size = new System.Drawing.Size(102, 37);
@@ -388,7 +372,6 @@
             // PBGraphics1
             // 
             this.PBGraphics1.BackColor = System.Drawing.Color.Transparent;
-            this.PBGraphics1.Image = ((System.Drawing.Image)(resources.GetObject("PBGraphics1.Image")));
             this.PBGraphics1.Location = new System.Drawing.Point(252, 12);
             this.PBGraphics1.Name = "PBGraphics1";
             this.PBGraphics1.Size = new System.Drawing.Size(114, 44);
@@ -400,7 +383,6 @@
             // PBGeneralL
             // 
             this.PBGeneralL.BackColor = System.Drawing.Color.Transparent;
-            this.PBGeneralL.Image = ((System.Drawing.Image)(resources.GetObject("PBGeneralL.Image")));
             this.PBGeneralL.Location = new System.Drawing.Point(105, 5);
             this.PBGeneralL.Name = "PBGeneralL";
             this.PBGeneralL.Size = new System.Drawing.Size(114, 60);
@@ -434,7 +416,6 @@
             // PBSmoothing
             // 
             this.PBSmoothing.BackColor = System.Drawing.Color.Transparent;
-            this.PBSmoothing.Image = ((System.Drawing.Image)(resources.GetObject("PBSmoothing.Image")));
             this.PBSmoothing.Location = new System.Drawing.Point(144, 216);
             this.PBSmoothing.Name = "PBSmoothing";
             this.PBSmoothing.Size = new System.Drawing.Size(94, 28);
@@ -445,7 +426,6 @@
             // PBShadowQuality
             // 
             this.PBShadowQuality.BackColor = System.Drawing.Color.Transparent;
-            this.PBShadowQuality.Image = ((System.Drawing.Image)(resources.GetObject("PBShadowQuality.Image")));
             this.PBShadowQuality.Location = new System.Drawing.Point(144, 151);
             this.PBShadowQuality.Name = "PBShadowQuality";
             this.PBShadowQuality.Size = new System.Drawing.Size(142, 34);
@@ -456,7 +436,6 @@
             // PBEffectQuality
             // 
             this.PBEffectQuality.BackColor = System.Drawing.Color.Transparent;
-            this.PBEffectQuality.Image = ((System.Drawing.Image)(resources.GetObject("PBEffectQuality.Image")));
             this.PBEffectQuality.Location = new System.Drawing.Point(144, 185);
             this.PBEffectQuality.Name = "PBEffectQuality";
             this.PBEffectQuality.Size = new System.Drawing.Size(115, 33);
@@ -467,7 +446,6 @@
             // PBTextureFiltering
             // 
             this.PBTextureFiltering.BackColor = System.Drawing.Color.Transparent;
-            this.PBTextureFiltering.Image = ((System.Drawing.Image)(resources.GetObject("PBTextureFiltering.Image")));
             this.PBTextureFiltering.Location = new System.Drawing.Point(144, 120);
             this.PBTextureFiltering.Name = "PBTextureFiltering";
             this.PBTextureFiltering.Size = new System.Drawing.Size(143, 33);
@@ -478,7 +456,6 @@
             // PBResolution
             // 
             this.PBResolution.BackColor = System.Drawing.Color.Transparent;
-            this.PBResolution.Image = ((System.Drawing.Image)(resources.GetObject("PBResolution.Image")));
             this.PBResolution.Location = new System.Drawing.Point(144, 56);
             this.PBResolution.Name = "PBResolution";
             this.PBResolution.Size = new System.Drawing.Size(100, 30);
@@ -489,7 +466,6 @@
             // PBFullScreen
             // 
             this.PBFullScreen.BackColor = System.Drawing.Color.Transparent;
-            this.PBFullScreen.Image = ((System.Drawing.Image)(resources.GetObject("PBFullScreen.Image")));
             this.PBFullScreen.Location = new System.Drawing.Point(145, 242);
             this.PBFullScreen.Name = "PBFullScreen";
             this.PBFullScreen.Size = new System.Drawing.Size(99, 28);
@@ -500,7 +476,6 @@
             // PBTextureQuality
             // 
             this.PBTextureQuality.BackColor = System.Drawing.Color.Transparent;
-            this.PBTextureQuality.Image = ((System.Drawing.Image)(resources.GetObject("PBTextureQuality.Image")));
             this.PBTextureQuality.Location = new System.Drawing.Point(144, 85);
             this.PBTextureQuality.Name = "PBTextureQuality";
             this.PBTextureQuality.Size = new System.Drawing.Size(141, 38);
@@ -511,7 +486,6 @@
             // PBApply2
             // 
             this.PBApply2.BackColor = System.Drawing.Color.Transparent;
-            this.PBApply2.Image = ((System.Drawing.Image)(resources.GetObject("PBApply2.Image")));
             this.PBApply2.Location = new System.Drawing.Point(424, 265);
             this.PBApply2.Name = "PBApply2";
             this.PBApply2.Size = new System.Drawing.Size(71, 39);
@@ -522,7 +496,6 @@
             // PBBack2
             // 
             this.PBBack2.BackColor = System.Drawing.Color.Transparent;
-            this.PBBack2.Image = ((System.Drawing.Image)(resources.GetObject("PBBack2.Image")));
             this.PBBack2.Location = new System.Drawing.Point(105, 265);
             this.PBBack2.Name = "PBBack2";
             this.PBBack2.Size = new System.Drawing.Size(58, 39);
@@ -534,7 +507,6 @@
             // PBControl2
             // 
             this.PBControl2.BackColor = System.Drawing.Color.Transparent;
-            this.PBControl2.Image = ((System.Drawing.Image)(resources.GetObject("PBControl2.Image")));
             this.PBControl2.Location = new System.Drawing.Point(393, 14);
             this.PBControl2.Name = "PBControl2";
             this.PBControl2.Size = new System.Drawing.Size(102, 37);
@@ -546,7 +518,6 @@
             // PBGraphicsL
             // 
             this.PBGraphicsL.BackColor = System.Drawing.Color.Transparent;
-            this.PBGraphicsL.Image = ((System.Drawing.Image)(resources.GetObject("PBGraphicsL.Image")));
             this.PBGraphicsL.Location = new System.Drawing.Point(246, 6);
             this.PBGraphicsL.Name = "PBGraphicsL";
             this.PBGraphicsL.Size = new System.Drawing.Size(117, 55);
@@ -557,7 +528,6 @@
             // PBGeneral1
             // 
             this.PBGeneral1.BackColor = System.Drawing.Color.Transparent;
-            this.PBGeneral1.Image = ((System.Drawing.Image)(resources.GetObject("PBGeneral1.Image")));
             this.PBGeneral1.Location = new System.Drawing.Point(108, 15);
             this.PBGeneral1.Name = "PBGeneral1";
             this.PBGeneral1.Size = new System.Drawing.Size(108, 37);
@@ -592,7 +562,6 @@
             // PBMovingForward
             // 
             this.PBMovingForward.BackColor = System.Drawing.Color.Transparent;
-            this.PBMovingForward.Image = ((System.Drawing.Image)(resources.GetObject("PBMovingForward.Image")));
             this.PBMovingForward.Location = new System.Drawing.Point(144, 145);
             this.PBMovingForward.Name = "PBMovingForward";
             this.PBMovingForward.Size = new System.Drawing.Size(150, 32);
@@ -603,7 +572,6 @@
             // PBMovingBackwards
             // 
             this.PBMovingBackwards.BackColor = System.Drawing.Color.Transparent;
-            this.PBMovingBackwards.Image = ((System.Drawing.Image)(resources.GetObject("PBMovingBackwards.Image")));
             this.PBMovingBackwards.Location = new System.Drawing.Point(144, 175);
             this.PBMovingBackwards.Name = "PBMovingBackwards";
             this.PBMovingBackwards.Size = new System.Drawing.Size(165, 33);
@@ -614,7 +582,6 @@
             // PBAttack
             // 
             this.PBAttack.BackColor = System.Drawing.Color.Transparent;
-            this.PBAttack.Image = ((System.Drawing.Image)(resources.GetObject("PBAttack.Image")));
             this.PBAttack.Location = new System.Drawing.Point(144, 117);
             this.PBAttack.Name = "PBAttack";
             this.PBAttack.Size = new System.Drawing.Size(62, 28);
@@ -625,7 +592,6 @@
             // PBMovementLeft
             // 
             this.PBMovementLeft.BackColor = System.Drawing.Color.Transparent;
-            this.PBMovementLeft.Image = ((System.Drawing.Image)(resources.GetObject("PBMovementLeft.Image")));
             this.PBMovementLeft.Location = new System.Drawing.Point(144, 206);
             this.PBMovementLeft.Name = "PBMovementLeft";
             this.PBMovementLeft.Size = new System.Drawing.Size(196, 30);
@@ -636,7 +602,6 @@
             // PBJump
             // 
             this.PBJump.BackColor = System.Drawing.Color.Transparent;
-            this.PBJump.Image = ((System.Drawing.Image)(resources.GetObject("PBJump.Image")));
             this.PBJump.Location = new System.Drawing.Point(144, 89);
             this.PBJump.Name = "PBJump";
             this.PBJump.Size = new System.Drawing.Size(61, 33);
@@ -647,7 +612,6 @@
             // PBSquat
             // 
             this.PBSquat.BackColor = System.Drawing.Color.Transparent;
-            this.PBSquat.Image = ((System.Drawing.Image)(resources.GetObject("PBSquat.Image")));
             this.PBSquat.Location = new System.Drawing.Point(144, 56);
             this.PBSquat.Name = "PBSquat";
             this.PBSquat.Size = new System.Drawing.Size(64, 34);
@@ -658,7 +622,6 @@
             // PBMovementRight
             // 
             this.PBMovementRight.BackColor = System.Drawing.Color.Transparent;
-            this.PBMovementRight.Image = ((System.Drawing.Image)(resources.GetObject("PBMovementRight.Image")));
             this.PBMovementRight.Location = new System.Drawing.Point(145, 234);
             this.PBMovementRight.Name = "PBMovementRight";
             this.PBMovementRight.Size = new System.Drawing.Size(193, 32);
@@ -670,7 +633,6 @@
             // PBApply3
             // 
             this.PBApply3.BackColor = System.Drawing.Color.Transparent;
-            this.PBApply3.Image = ((System.Drawing.Image)(resources.GetObject("PBApply3.Image")));
             this.PBApply3.Location = new System.Drawing.Point(424, 265);
             this.PBApply3.Name = "PBApply3";
             this.PBApply3.Size = new System.Drawing.Size(71, 39);
@@ -681,7 +643,6 @@
             // PBBack3
             // 
             this.PBBack3.BackColor = System.Drawing.Color.Transparent;
-            this.PBBack3.Image = ((System.Drawing.Image)(resources.GetObject("PBBack3.Image")));
             this.PBBack3.Location = new System.Drawing.Point(105, 265);
             this.PBBack3.Name = "PBBack3";
             this.PBBack3.Size = new System.Drawing.Size(58, 39);
@@ -693,7 +654,6 @@
             // PBGraphics2
             // 
             this.PBGraphics2.BackColor = System.Drawing.Color.Transparent;
-            this.PBGraphics2.Image = ((System.Drawing.Image)(resources.GetObject("PBGraphics2.Image")));
             this.PBGraphics2.Location = new System.Drawing.Point(244, 14);
             this.PBGraphics2.Name = "PBGraphics2";
             this.PBGraphics2.Size = new System.Drawing.Size(114, 44);
@@ -705,7 +665,6 @@
             // PBControlL
             // 
             this.PBControlL.BackColor = System.Drawing.Color.Transparent;
-            this.PBControlL.Image = ((System.Drawing.Image)(resources.GetObject("PBControlL.Image")));
             this.PBControlL.Location = new System.Drawing.Point(379, 8);
             this.PBControlL.Name = "PBControlL";
             this.PBControlL.Size = new System.Drawing.Size(108, 52);
@@ -716,7 +675,6 @@
             // PBGeneral2
             // 
             this.PBGeneral2.BackColor = System.Drawing.Color.Transparent;
-            this.PBGeneral2.Image = ((System.Drawing.Image)(resources.GetObject("PBGeneral2.Image")));
             this.PBGeneral2.Location = new System.Drawing.Point(108, 15);
             this.PBGeneral2.Name = "PBGeneral2";
             this.PBGeneral2.Size = new System.Drawing.Size(108, 37);

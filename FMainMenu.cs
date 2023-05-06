@@ -158,12 +158,16 @@ namespace Stay_Alone_интерфейс
 
         private void FMainMenu_Load(object sender, EventArgs e)
         {
-            
-           
+            // Это всё делает невидимыми закладки:
+            TabControl.Appearance = TabAppearance.FlatButtons;
+            TabControl.ItemSize = new Size(0, 1);
+            TabControl.SizeMode = TabSizeMode.Fixed;
+            TabControl.TabStop = false;
+
 
             try  // Загружаем картинки из папки Images при запуске EXE
             {
-                TP0_Main.BackgroundImage = Image.FromFile("Images\\Background2.png");
+                TP0_Main.BackgroundImage = Image.FromFile("Images\\Background.png");
                 PBName.Image = Image.FromFile("Images\\StayAlone.png");
                 PBPlay.Image = Image.FromFile("Images\\Play.png");
                 PBSettings.Image = Image.FromFile("Images\\Settings.png");
@@ -171,13 +175,13 @@ namespace Stay_Alone_интерфейс
                 
                 TP1_Exit.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBWindow.Image = Image.FromFile("Images\\Window.png");
-                PBYes.Image = Image.FromFile("Images\\CheckMark.png");
-                PBNo.Image = Image.FromFile("Images\\Cross.png");
+                PBYes.Image = Image.FromFile("Images\\Yes.png");
+                PBNo.Image = Image.FromFile("Images\\No.png");
                 
                 TP2_SettingsGeneral.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneralL.Image = Image.FromFile("Images\\GeneralWithLine.png");
                 PBGraphics1.Image = Image.FromFile("Images\\Graphics.png");
-                PBControl1.Image = Image.FromFile("Images\\Gontrol.png");
+                PBControl1.Image = Image.FromFile("Images\\Control.png");
                 PBBack1.Image = Image.FromFile("Images\\Back.png");
                 PBApply1.Image = Image.FromFile("Images\\Apply.png");
                 PBLanguage.Image = Image.FromFile("Images\\Language.png");
@@ -190,7 +194,7 @@ namespace Stay_Alone_интерфейс
                 TP3_SettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneral1.Image = Image.FromFile("Images\\General.png");
                 PBGraphicsL.Image = Image.FromFile("Images\\GraphicsWithLine.png");
-                PBControl2.Image = Image.FromFile("Images\\Gontrol.png");
+                PBControl2.Image = Image.FromFile("Images\\Control.png");
                 PBBack2.Image = Image.FromFile("Images\\Back.png");
                 PBApply2.Image = Image.FromFile("Images\\Apply.png");
                 PBResolution.Image = Image.FromFile("Images\\Resolution.png");
@@ -204,7 +208,7 @@ namespace Stay_Alone_интерфейс
                 TP4_SettingsControl.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneral2.Image = Image.FromFile("Images\\General.png");
                 PBGraphics2.Image = Image.FromFile("Images\\Graphics.png");
-                PBControlL.Image = Image.FromFile("Images\\GontrolWithLine.png");
+                PBControlL.Image = Image.FromFile("Images\\ControlWithLine.png");
                 PBBack3.Image = Image.FromFile("Images\\Back.png");
                 PBApply3.Image = Image.FromFile("Images\\Apply.png");
                 PBSquat.Image = Image.FromFile("Images\\Squat.png");
