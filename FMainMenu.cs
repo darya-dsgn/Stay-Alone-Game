@@ -30,6 +30,7 @@ namespace Stay_Alone_интерфейс
         public float Graphics2Height, Graphics2Width, Graphics2Top, Graphics2Left;
         public float Control1Height, Control1Width, Control1Top, Control1Left;
         public float Control2Height, Control2Width, Control2Top, Control2Left;
+
         public float Back1Height, Back1Width, Back1Top, Back1Left;
         public float Back2Height, Back2Width, Back2Top, Back2Left;
         public float Back3Height, Back3Width, Back3Top, Back3Left;
@@ -57,57 +58,54 @@ namespace Stay_Alone_интерфейс
 
         private void PBNo_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 0;
+            //TabControl.SelectedIndex = 0;
         }
 
         private void PBBack1_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 0;
+            //TabControl.SelectedIndex = 0;
         }
 
         private void PBGraphics1_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 3;
+            //TabControl.SelectedIndex = 3;
         }
 
         private void PBControl1_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 4;
+            //TabControl.SelectedIndex = 4;
         }
 
         private void PBGeneral1_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 2;
+            //TabControl.SelectedIndex = 2;
         }
 
         private void PBControl2_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 4;
+            //TabControl.SelectedIndex = 4;
         }
 
         private void PBBack2_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 0;
+            //TabControl.SelectedIndex = 0;
         }
 
         private void PBGeneral2_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 2;
+            //TabControl.SelectedIndex = 2;
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void PBGraphics2_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 3;
+            //TabControl.SelectedIndex = 3;
         }
 
         private void PBBack3_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 0;
+            //TabControl.SelectedIndex = 0;
         }
 
         private void PBMovementRight_Click(object sender, EventArgs e)
@@ -122,12 +120,12 @@ namespace Stay_Alone_интерфейс
 
         private void PBExit_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 1;
+            //TabControl.SelectedIndex = 1;
         }
 
         private void PBSettings_Click(object sender, EventArgs e)
         {
-            TabControl.SelectedIndex = 2;
+            //TabControl.SelectedIndex = 2;
         }
 
         private void FMainMenu_Move(object sender, EventArgs e)
@@ -159,26 +157,29 @@ namespace Stay_Alone_интерфейс
         private void FMainMenu_Load(object sender, EventArgs e)
         {
             // Это всё делает невидимыми закладки:
-            TabControl.Appearance = TabAppearance.FlatButtons;
-            TabControl.ItemSize = new Size(0, 1);
-            TabControl.SizeMode = TabSizeMode.Fixed;
-            TabControl.TabStop = false;
+            //TabControl.Appearance = TabAppearance.FlatButtons;
+            //TabControl.ItemSize = new Size(0, 1);
+            //TabControl.SizeMode = TabSizeMode.Fixed;
+            //TabControl.TabStop = false;
 
 
             try  // Загружаем картинки из папки Images при запуске EXE
             {
-                TP0_Main.BackgroundImage = Image.FromFile("Images\\Background.png");
+                //TP0_Main.BackgroundImage = Image.FromFile("Images\\Background.png");
+                PMain.BackgroundImage = Image.FromFile("Images\\Background.png");
                 PBName.Image = Image.FromFile("Images\\StayAlone.png");
                 PBPlay.Image = Image.FromFile("Images\\Play.png");
                 PBSettings.Image = Image.FromFile("Images\\Settings.png");
                 PBExit.Image = Image.FromFile("Images\\Exit.png");
                 
-                TP1_Exit.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                //TP1_Exit.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                PExit.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBWindow.Image = Image.FromFile("Images\\Window.png");
                 PBYes.Image = Image.FromFile("Images\\Yes.png");
                 PBNo.Image = Image.FromFile("Images\\No.png");
                 
-                TP2_SettingsGeneral.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                //TP2_SettingsGeneral.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                PSettingsGeneral.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneralL.Image = Image.FromFile("Images\\GeneralWithLine.png");
                 PBGraphics1.Image = Image.FromFile("Images\\Graphics.png");
                 PBControl1.Image = Image.FromFile("Images\\Control.png");
@@ -191,7 +192,8 @@ namespace Stay_Alone_интерфейс
                 PBVolume.Image = Image.FromFile("Images\\Volume.png");
                 PBReg.Image = Image.FromFile("Images\\VolumeReg.png");
 
-                TP3_SettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                //TP3_SettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                PSettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneral1.Image = Image.FromFile("Images\\General.png");
                 PBGraphicsL.Image = Image.FromFile("Images\\GraphicsWithLine.png");
                 PBControl2.Image = Image.FromFile("Images\\Control.png");
@@ -205,7 +207,8 @@ namespace Stay_Alone_интерфейс
                 PBSmoothing.Image = Image.FromFile("Images\\Smoothing.png");
                 PBFullScreen.Image = Image.FromFile("Images\\FullScreen.png");
 
-                TP4_SettingsControl.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                //TP4_SettingsControl.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                PSettingsControl.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneral2.Image = Image.FromFile("Images\\General.png");
                 PBGraphics2.Image = Image.FromFile("Images\\Graphics.png");
                 PBControlL.Image = Image.FromFile("Images\\ControlWithLine.png");
