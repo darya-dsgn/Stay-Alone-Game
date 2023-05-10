@@ -58,54 +58,64 @@ namespace Stay_Alone_интерфейс
 
         private void PBNo_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 0;
+            PExit.Visible = false;
+            PMain.Visible = true;
         }
 
         private void PBBack1_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 0;
+            PSettingsGeneral.Visible = false;
+            PMain.Visible = true;
         }
 
         private void PBGraphics1_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 3;
+            PSettingsGraphics.Visible = true;
+            PSettingsGeneral.Visible = false;
         }
 
         private void PBControl1_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 4;
+            PSettingsControl.Visible = true;
+            PSettingsGeneral.Visible = false;
         }
 
         private void PBGeneral1_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 2;
+            PSettingsGeneral.Visible = true;
+            PSettingsGraphics.Visible = false;
         }
 
         private void PBControl2_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 4;
+            PSettingsControl.Visible = true;
+            PSettingsGraphics.Visible = false;
         }
 
         private void PBBack2_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 0;
+            PSettingsGraphics.Visible = false;
+            PMain.Visible = true;
         }
 
         private void PBGeneral2_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 2;
+            PSettingsGeneral.Visible = true;
+            PSettingsControl.Visible = false;
         }
 
 
 
         private void PBGraphics2_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 3;
+            PSettingsGraphics.Visible = true;
+            PSettingsControl.Visible = false;
         }
 
         private void PBBack3_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 0;
+            PMain.Visible = true;
+            PSettingsControl.Visible = false;
         }
 
         private void PBMovementRight_Click(object sender, EventArgs e)
@@ -120,12 +130,14 @@ namespace Stay_Alone_интерфейс
 
         private void PBExit_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 1;
+            PExit.Visible = true;
+            PMain.Visible = false;
         }
 
         private void PBSettings_Click(object sender, EventArgs e)
         {
-            //TabControl.SelectedIndex = 2;
+            PSettingsGeneral.Visible = true;
+            PMain.Visible = false;
         }
 
         private void FMainMenu_Move(object sender, EventArgs e)
@@ -156,12 +168,17 @@ namespace Stay_Alone_интерфейс
 
         private void FMainMenu_Load(object sender, EventArgs e)
         {
-            // Это всё делает невидимыми закладки:
-            //TabControl.Appearance = TabAppearance.FlatButtons;
-            //TabControl.ItemSize = new Size(0, 1);
-            //TabControl.SizeMode = TabSizeMode.Fixed;
-            //TabControl.TabStop = false;
-
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //this.WindowState = FormWindowState.Maximized;
+            PMain.Dock = DockStyle.Fill;
+            PExit.Dock = DockStyle.Fill;
+            PExit.Visible = false;
+            PSettingsGeneral.Dock = DockStyle.Fill;
+            PSettingsGeneral.Visible = false;
+            PSettingsGraphics.Dock = DockStyle.Fill;
+            PSettingsGraphics.Visible = false;
+            PSettingsControl.Dock = DockStyle.Fill;
+            PSettingsControl.Visible = false;
 
             try  // Загружаем картинки из папки Images при запуске EXE
             {
