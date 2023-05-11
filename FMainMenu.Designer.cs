@@ -39,10 +39,12 @@
             this.PBYes = new System.Windows.Forms.PictureBox();
             this.PBWindow = new System.Windows.Forms.PictureBox();
             this.PSettingsGeneral = new System.Windows.Forms.Panel();
-            this.PBBack1 = new System.Windows.Forms.PictureBox();
-            this.PBReg = new System.Windows.Forms.PictureBox();
             this.PBVolume = new System.Windows.Forms.PictureBox();
             this.PBApply1 = new System.Windows.Forms.PictureBox();
+            this.CBLanguageValue = new System.Windows.Forms.ComboBox();
+            this.PBBack1 = new System.Windows.Forms.PictureBox();
+            this.PBVolumeReg = new System.Windows.Forms.PictureBox();
+            this.PBVolumeLine = new System.Windows.Forms.PictureBox();
             this.PBSubtitles = new System.Windows.Forms.PictureBox();
             this.PBSensitivity = new System.Windows.Forms.PictureBox();
             this.PBDifficulty = new System.Windows.Forms.PictureBox();
@@ -86,10 +88,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBYes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBWindow)).BeginInit();
             this.PSettingsGeneral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBBack1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBReg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBApply1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBBack1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBVolumeReg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBVolumeLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBSubtitles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBSensitivity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBDifficulty)).BeginInit();
@@ -133,10 +136,9 @@
             this.PMain.Controls.Add(this.PBExit);
             this.PMain.Controls.Add(this.PBSettings);
             this.PMain.Controls.Add(this.PBPlay);
-            this.PMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PMain.Location = new System.Drawing.Point(0, 0);
+            this.PMain.Location = new System.Drawing.Point(12, 336);
             this.PMain.Name = "PMain";
-            this.PMain.Size = new System.Drawing.Size(600, 354);
+            this.PMain.Size = new System.Drawing.Size(99, 48);
             this.PMain.TabIndex = 1;
             // 
             // PBName
@@ -187,8 +189,8 @@
             // 
             // PExit
             // 
-            this.PExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PExit.BackgroundImage")));
-            this.PExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PExit.BackColor = System.Drawing.Color.Black;
+            this.PExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PExit.Controls.Add(this.PBNo);
             this.PExit.Controls.Add(this.PBYes);
             this.PExit.Controls.Add(this.PBWindow);
@@ -233,12 +235,14 @@
             // 
             // PSettingsGeneral
             // 
-            this.PSettingsGeneral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PSettingsGeneral.BackgroundImage")));
+            this.PSettingsGeneral.BackColor = System.Drawing.Color.Black;
             this.PSettingsGeneral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PSettingsGeneral.Controls.Add(this.PBBack1);
-            this.PSettingsGeneral.Controls.Add(this.PBReg);
             this.PSettingsGeneral.Controls.Add(this.PBVolume);
             this.PSettingsGeneral.Controls.Add(this.PBApply1);
+            this.PSettingsGeneral.Controls.Add(this.CBLanguageValue);
+            this.PSettingsGeneral.Controls.Add(this.PBBack1);
+            this.PSettingsGeneral.Controls.Add(this.PBVolumeReg);
+            this.PSettingsGeneral.Controls.Add(this.PBVolumeLine);
             this.PSettingsGeneral.Controls.Add(this.PBSubtitles);
             this.PSettingsGeneral.Controls.Add(this.PBSensitivity);
             this.PSettingsGeneral.Controls.Add(this.PBDifficulty);
@@ -246,14 +250,53 @@
             this.PSettingsGeneral.Controls.Add(this.PBControl1);
             this.PSettingsGeneral.Controls.Add(this.PBGraphics1);
             this.PSettingsGeneral.Controls.Add(this.PBGeneralL);
-            this.PSettingsGeneral.Location = new System.Drawing.Point(266, 340);
+            this.PSettingsGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PSettingsGeneral.Location = new System.Drawing.Point(0, 0);
             this.PSettingsGeneral.Name = "PSettingsGeneral";
-            this.PSettingsGeneral.Size = new System.Drawing.Size(99, 80);
+            this.PSettingsGeneral.Size = new System.Drawing.Size(600, 354);
             this.PSettingsGeneral.TabIndex = 3;
+            // 
+            // PBVolume
+            // 
+            this.PBVolume.BackColor = System.Drawing.Color.Black;
+            this.PBVolume.Location = new System.Drawing.Point(146, 244);
+            this.PBVolume.Name = "PBVolume";
+            this.PBVolume.Size = new System.Drawing.Size(100, 32);
+            this.PBVolume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBVolume.TabIndex = 31;
+            this.PBVolume.TabStop = false;
+            // 
+            // PBApply1
+            // 
+            this.PBApply1.BackColor = System.Drawing.Color.Black;
+            this.PBApply1.Location = new System.Drawing.Point(423, 282);
+            this.PBApply1.Name = "PBApply1";
+            this.PBApply1.Size = new System.Drawing.Size(71, 39);
+            this.PBApply1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBApply1.TabIndex = 27;
+            this.PBApply1.TabStop = false;
+            // 
+            // CBLanguageValue
+            // 
+            this.CBLanguageValue.BackColor = System.Drawing.Color.Black;
+            this.CBLanguageValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBLanguageValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBLanguageValue.Font = new System.Drawing.Font("Papyrus", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CBLanguageValue.ForeColor = System.Drawing.Color.White;
+            this.CBLanguageValue.FormattingEnabled = true;
+            this.CBLanguageValue.Items.AddRange(new object[] {
+            "English",
+            "Русский",
+            "Polski"});
+            this.CBLanguageValue.Location = new System.Drawing.Point(382, 97);
+            this.CBLanguageValue.Name = "CBLanguageValue";
+            this.CBLanguageValue.Size = new System.Drawing.Size(71, 46);
+            this.CBLanguageValue.TabIndex = 30;
+            this.CBLanguageValue.SelectedIndexChanged += new System.EventHandler(this.CBLanguageValue_SelectedIndexChanged);
             // 
             // PBBack1
             // 
-            this.PBBack1.BackColor = System.Drawing.Color.Transparent;
+            this.PBBack1.BackColor = System.Drawing.Color.Black;
             this.PBBack1.Location = new System.Drawing.Point(104, 282);
             this.PBBack1.Name = "PBBack1";
             this.PBBack1.Size = new System.Drawing.Size(58, 39);
@@ -262,44 +305,34 @@
             this.PBBack1.TabStop = false;
             this.PBBack1.Click += new System.EventHandler(this.PBBack1_Click);
             // 
-            // PBReg
+            // PBVolumeReg
             // 
-            this.PBReg.BackColor = System.Drawing.Color.Transparent;
-            this.PBReg.Location = new System.Drawing.Point(183, 250);
-            this.PBReg.Margin = new System.Windows.Forms.Padding(0);
-            this.PBReg.Name = "PBReg";
-            this.PBReg.Size = new System.Drawing.Size(10, 26);
-            this.PBReg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBReg.TabIndex = 29;
-            this.PBReg.TabStop = false;
-            this.PBReg.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PBReg_MouseMove);
+            this.PBVolumeReg.BackColor = System.Drawing.Color.Black;
+            this.PBVolumeReg.Location = new System.Drawing.Point(341, 250);
+            this.PBVolumeReg.Margin = new System.Windows.Forms.Padding(0);
+            this.PBVolumeReg.Name = "PBVolumeReg";
+            this.PBVolumeReg.Size = new System.Drawing.Size(10, 26);
+            this.PBVolumeReg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBVolumeReg.TabIndex = 29;
+            this.PBVolumeReg.TabStop = false;
+            this.PBVolumeReg.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PBVolumeReg_MouseMove);
             // 
-            // PBVolume
+            // PBVolumeLine
             // 
-            this.PBVolume.BackColor = System.Drawing.Color.Transparent;
-            this.PBVolume.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PBVolume.ErrorImage")));
-            this.PBVolume.InitialImage = ((System.Drawing.Image)(resources.GetObject("PBVolume.InitialImage")));
-            this.PBVolume.Location = new System.Drawing.Point(144, 250);
-            this.PBVolume.Margin = new System.Windows.Forms.Padding(2);
-            this.PBVolume.Name = "PBVolume";
-            this.PBVolume.Size = new System.Drawing.Size(154, 59);
-            this.PBVolume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBVolume.TabIndex = 28;
-            this.PBVolume.TabStop = false;
-            // 
-            // PBApply1
-            // 
-            this.PBApply1.BackColor = System.Drawing.Color.Transparent;
-            this.PBApply1.Location = new System.Drawing.Point(423, 282);
-            this.PBApply1.Name = "PBApply1";
-            this.PBApply1.Size = new System.Drawing.Size(71, 39);
-            this.PBApply1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBApply1.TabIndex = 27;
-            this.PBApply1.TabStop = false;
+            this.PBVolumeLine.BackColor = System.Drawing.Color.Black;
+            this.PBVolumeLine.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PBVolumeLine.ErrorImage")));
+            this.PBVolumeLine.InitialImage = ((System.Drawing.Image)(resources.GetObject("PBVolumeLine.InitialImage")));
+            this.PBVolumeLine.Location = new System.Drawing.Point(302, 250);
+            this.PBVolumeLine.Margin = new System.Windows.Forms.Padding(2);
+            this.PBVolumeLine.Name = "PBVolumeLine";
+            this.PBVolumeLine.Size = new System.Drawing.Size(154, 59);
+            this.PBVolumeLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBVolumeLine.TabIndex = 28;
+            this.PBVolumeLine.TabStop = false;
             // 
             // PBSubtitles
             // 
-            this.PBSubtitles.BackColor = System.Drawing.Color.Transparent;
+            this.PBSubtitles.BackColor = System.Drawing.Color.Black;
             this.PBSubtitles.Location = new System.Drawing.Point(144, 208);
             this.PBSubtitles.Name = "PBSubtitles";
             this.PBSubtitles.Size = new System.Drawing.Size(100, 32);
@@ -309,7 +342,7 @@
             // 
             // PBSensitivity
             // 
-            this.PBSensitivity.BackColor = System.Drawing.Color.Transparent;
+            this.PBSensitivity.BackColor = System.Drawing.Color.Black;
             this.PBSensitivity.Location = new System.Drawing.Point(144, 170);
             this.PBSensitivity.Name = "PBSensitivity";
             this.PBSensitivity.Size = new System.Drawing.Size(114, 38);
@@ -319,7 +352,7 @@
             // 
             // PBDifficulty
             // 
-            this.PBDifficulty.BackColor = System.Drawing.Color.Transparent;
+            this.PBDifficulty.BackColor = System.Drawing.Color.Black;
             this.PBDifficulty.Location = new System.Drawing.Point(144, 133);
             this.PBDifficulty.Name = "PBDifficulty";
             this.PBDifficulty.Size = new System.Drawing.Size(100, 33);
@@ -329,7 +362,7 @@
             // 
             // PBLanguage
             // 
-            this.PBLanguage.BackColor = System.Drawing.Color.Transparent;
+            this.PBLanguage.BackColor = System.Drawing.Color.Black;
             this.PBLanguage.Location = new System.Drawing.Point(144, 89);
             this.PBLanguage.Name = "PBLanguage";
             this.PBLanguage.Size = new System.Drawing.Size(100, 38);
@@ -339,7 +372,7 @@
             // 
             // PBControl1
             // 
-            this.PBControl1.BackColor = System.Drawing.Color.Transparent;
+            this.PBControl1.BackColor = System.Drawing.Color.Black;
             this.PBControl1.Location = new System.Drawing.Point(392, 31);
             this.PBControl1.Name = "PBControl1";
             this.PBControl1.Size = new System.Drawing.Size(102, 37);
@@ -350,7 +383,7 @@
             // 
             // PBGraphics1
             // 
-            this.PBGraphics1.BackColor = System.Drawing.Color.Transparent;
+            this.PBGraphics1.BackColor = System.Drawing.Color.Black;
             this.PBGraphics1.Location = new System.Drawing.Point(251, 29);
             this.PBGraphics1.Name = "PBGraphics1";
             this.PBGraphics1.Size = new System.Drawing.Size(114, 44);
@@ -361,7 +394,7 @@
             // 
             // PBGeneralL
             // 
-            this.PBGeneralL.BackColor = System.Drawing.Color.Transparent;
+            this.PBGeneralL.BackColor = System.Drawing.Color.Black;
             this.PBGeneralL.Location = new System.Drawing.Point(104, 22);
             this.PBGeneralL.Name = "PBGeneralL";
             this.PBGeneralL.Size = new System.Drawing.Size(114, 60);
@@ -371,7 +404,7 @@
             // 
             // PSettingsGraphics
             // 
-            this.PSettingsGraphics.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PSettingsGraphics.BackgroundImage")));
+            this.PSettingsGraphics.BackColor = System.Drawing.Color.Black;
             this.PSettingsGraphics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PSettingsGraphics.Controls.Add(this.PBSmoothing);
             this.PSettingsGraphics.Controls.Add(this.PBShadowQuality);
@@ -392,7 +425,7 @@
             // 
             // PBSmoothing
             // 
-            this.PBSmoothing.BackColor = System.Drawing.Color.Transparent;
+            this.PBSmoothing.BackColor = System.Drawing.Color.Black;
             this.PBSmoothing.Location = new System.Drawing.Point(143, 233);
             this.PBSmoothing.Name = "PBSmoothing";
             this.PBSmoothing.Size = new System.Drawing.Size(94, 28);
@@ -402,7 +435,7 @@
             // 
             // PBShadowQuality
             // 
-            this.PBShadowQuality.BackColor = System.Drawing.Color.Transparent;
+            this.PBShadowQuality.BackColor = System.Drawing.Color.Black;
             this.PBShadowQuality.Location = new System.Drawing.Point(143, 168);
             this.PBShadowQuality.Name = "PBShadowQuality";
             this.PBShadowQuality.Size = new System.Drawing.Size(142, 34);
@@ -412,7 +445,7 @@
             // 
             // PBEffectQuality
             // 
-            this.PBEffectQuality.BackColor = System.Drawing.Color.Transparent;
+            this.PBEffectQuality.BackColor = System.Drawing.Color.Black;
             this.PBEffectQuality.Location = new System.Drawing.Point(143, 202);
             this.PBEffectQuality.Name = "PBEffectQuality";
             this.PBEffectQuality.Size = new System.Drawing.Size(115, 33);
@@ -422,7 +455,7 @@
             // 
             // PBTextureFiltering
             // 
-            this.PBTextureFiltering.BackColor = System.Drawing.Color.Transparent;
+            this.PBTextureFiltering.BackColor = System.Drawing.Color.Black;
             this.PBTextureFiltering.Location = new System.Drawing.Point(143, 137);
             this.PBTextureFiltering.Name = "PBTextureFiltering";
             this.PBTextureFiltering.Size = new System.Drawing.Size(143, 33);
@@ -432,7 +465,7 @@
             // 
             // PBResolution
             // 
-            this.PBResolution.BackColor = System.Drawing.Color.Transparent;
+            this.PBResolution.BackColor = System.Drawing.Color.Black;
             this.PBResolution.Location = new System.Drawing.Point(143, 73);
             this.PBResolution.Name = "PBResolution";
             this.PBResolution.Size = new System.Drawing.Size(100, 30);
@@ -442,7 +475,7 @@
             // 
             // PBFullScreen
             // 
-            this.PBFullScreen.BackColor = System.Drawing.Color.Transparent;
+            this.PBFullScreen.BackColor = System.Drawing.Color.Black;
             this.PBFullScreen.Location = new System.Drawing.Point(144, 259);
             this.PBFullScreen.Name = "PBFullScreen";
             this.PBFullScreen.Size = new System.Drawing.Size(99, 28);
@@ -452,7 +485,7 @@
             // 
             // PBTextureQuality
             // 
-            this.PBTextureQuality.BackColor = System.Drawing.Color.Transparent;
+            this.PBTextureQuality.BackColor = System.Drawing.Color.Black;
             this.PBTextureQuality.Location = new System.Drawing.Point(143, 102);
             this.PBTextureQuality.Name = "PBTextureQuality";
             this.PBTextureQuality.Size = new System.Drawing.Size(141, 38);
@@ -462,7 +495,7 @@
             // 
             // PBApply2
             // 
-            this.PBApply2.BackColor = System.Drawing.Color.Transparent;
+            this.PBApply2.BackColor = System.Drawing.Color.Black;
             this.PBApply2.Location = new System.Drawing.Point(423, 282);
             this.PBApply2.Name = "PBApply2";
             this.PBApply2.Size = new System.Drawing.Size(71, 39);
@@ -472,7 +505,7 @@
             // 
             // PBBack2
             // 
-            this.PBBack2.BackColor = System.Drawing.Color.Transparent;
+            this.PBBack2.BackColor = System.Drawing.Color.Black;
             this.PBBack2.Location = new System.Drawing.Point(104, 282);
             this.PBBack2.Name = "PBBack2";
             this.PBBack2.Size = new System.Drawing.Size(58, 39);
@@ -483,7 +516,7 @@
             // 
             // PBControl2
             // 
-            this.PBControl2.BackColor = System.Drawing.Color.Transparent;
+            this.PBControl2.BackColor = System.Drawing.Color.Black;
             this.PBControl2.Location = new System.Drawing.Point(392, 31);
             this.PBControl2.Name = "PBControl2";
             this.PBControl2.Size = new System.Drawing.Size(102, 37);
@@ -494,7 +527,7 @@
             // 
             // PBGraphicsL
             // 
-            this.PBGraphicsL.BackColor = System.Drawing.Color.Transparent;
+            this.PBGraphicsL.BackColor = System.Drawing.Color.Black;
             this.PBGraphicsL.Location = new System.Drawing.Point(249, 22);
             this.PBGraphicsL.Name = "PBGraphicsL";
             this.PBGraphicsL.Size = new System.Drawing.Size(117, 55);
@@ -504,7 +537,7 @@
             // 
             // PBGeneral1
             // 
-            this.PBGeneral1.BackColor = System.Drawing.Color.Transparent;
+            this.PBGeneral1.BackColor = System.Drawing.Color.Black;
             this.PBGeneral1.Location = new System.Drawing.Point(107, 32);
             this.PBGeneral1.Name = "PBGeneral1";
             this.PBGeneral1.Size = new System.Drawing.Size(108, 37);
@@ -515,7 +548,7 @@
             // 
             // PSettingsControl
             // 
-            this.PSettingsControl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PSettingsControl.BackgroundImage")));
+            this.PSettingsControl.BackColor = System.Drawing.Color.Black;
             this.PSettingsControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PSettingsControl.Controls.Add(this.PBMovingForward);
             this.PSettingsControl.Controls.Add(this.PBMovingBackwards);
@@ -536,7 +569,7 @@
             // 
             // PBMovingForward
             // 
-            this.PBMovingForward.BackColor = System.Drawing.Color.Transparent;
+            this.PBMovingForward.BackColor = System.Drawing.Color.Black;
             this.PBMovingForward.Location = new System.Drawing.Point(143, 162);
             this.PBMovingForward.Name = "PBMovingForward";
             this.PBMovingForward.Size = new System.Drawing.Size(150, 32);
@@ -546,7 +579,7 @@
             // 
             // PBMovingBackwards
             // 
-            this.PBMovingBackwards.BackColor = System.Drawing.Color.Transparent;
+            this.PBMovingBackwards.BackColor = System.Drawing.Color.Black;
             this.PBMovingBackwards.Location = new System.Drawing.Point(143, 192);
             this.PBMovingBackwards.Name = "PBMovingBackwards";
             this.PBMovingBackwards.Size = new System.Drawing.Size(165, 33);
@@ -556,7 +589,7 @@
             // 
             // PBAttack
             // 
-            this.PBAttack.BackColor = System.Drawing.Color.Transparent;
+            this.PBAttack.BackColor = System.Drawing.Color.Black;
             this.PBAttack.Location = new System.Drawing.Point(143, 134);
             this.PBAttack.Name = "PBAttack";
             this.PBAttack.Size = new System.Drawing.Size(62, 28);
@@ -566,7 +599,7 @@
             // 
             // PBMovementLeft
             // 
-            this.PBMovementLeft.BackColor = System.Drawing.Color.Transparent;
+            this.PBMovementLeft.BackColor = System.Drawing.Color.Black;
             this.PBMovementLeft.Location = new System.Drawing.Point(143, 223);
             this.PBMovementLeft.Name = "PBMovementLeft";
             this.PBMovementLeft.Size = new System.Drawing.Size(196, 30);
@@ -576,7 +609,7 @@
             // 
             // PBJump
             // 
-            this.PBJump.BackColor = System.Drawing.Color.Transparent;
+            this.PBJump.BackColor = System.Drawing.Color.Black;
             this.PBJump.Location = new System.Drawing.Point(143, 106);
             this.PBJump.Name = "PBJump";
             this.PBJump.Size = new System.Drawing.Size(61, 33);
@@ -586,7 +619,7 @@
             // 
             // PBSquat
             // 
-            this.PBSquat.BackColor = System.Drawing.Color.Transparent;
+            this.PBSquat.BackColor = System.Drawing.Color.Black;
             this.PBSquat.Location = new System.Drawing.Point(143, 73);
             this.PBSquat.Name = "PBSquat";
             this.PBSquat.Size = new System.Drawing.Size(64, 34);
@@ -596,7 +629,7 @@
             // 
             // PBMovementRight
             // 
-            this.PBMovementRight.BackColor = System.Drawing.Color.Transparent;
+            this.PBMovementRight.BackColor = System.Drawing.Color.Black;
             this.PBMovementRight.Location = new System.Drawing.Point(144, 251);
             this.PBMovementRight.Name = "PBMovementRight";
             this.PBMovementRight.Size = new System.Drawing.Size(193, 32);
@@ -606,7 +639,7 @@
             // 
             // PBApply3
             // 
-            this.PBApply3.BackColor = System.Drawing.Color.Transparent;
+            this.PBApply3.BackColor = System.Drawing.Color.Black;
             this.PBApply3.Location = new System.Drawing.Point(423, 282);
             this.PBApply3.Name = "PBApply3";
             this.PBApply3.Size = new System.Drawing.Size(71, 39);
@@ -616,7 +649,7 @@
             // 
             // PBBack3
             // 
-            this.PBBack3.BackColor = System.Drawing.Color.Transparent;
+            this.PBBack3.BackColor = System.Drawing.Color.Black;
             this.PBBack3.Location = new System.Drawing.Point(104, 282);
             this.PBBack3.Name = "PBBack3";
             this.PBBack3.Size = new System.Drawing.Size(58, 39);
@@ -627,7 +660,7 @@
             // 
             // PBGraphics2
             // 
-            this.PBGraphics2.BackColor = System.Drawing.Color.Transparent;
+            this.PBGraphics2.BackColor = System.Drawing.Color.Black;
             this.PBGraphics2.Location = new System.Drawing.Point(251, 29);
             this.PBGraphics2.Name = "PBGraphics2";
             this.PBGraphics2.Size = new System.Drawing.Size(114, 44);
@@ -638,7 +671,7 @@
             // 
             // PBControlL
             // 
-            this.PBControlL.BackColor = System.Drawing.Color.Transparent;
+            this.PBControlL.BackColor = System.Drawing.Color.Black;
             this.PBControlL.Location = new System.Drawing.Point(390, 22);
             this.PBControlL.Name = "PBControlL";
             this.PBControlL.Size = new System.Drawing.Size(105, 59);
@@ -648,7 +681,7 @@
             // 
             // PBGeneral2
             // 
-            this.PBGeneral2.BackColor = System.Drawing.Color.Transparent;
+            this.PBGeneral2.BackColor = System.Drawing.Color.Black;
             this.PBGeneral2.Location = new System.Drawing.Point(107, 32);
             this.PBGeneral2.Name = "PBGeneral2";
             this.PBGeneral2.Size = new System.Drawing.Size(109, 37);
@@ -687,10 +720,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBYes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBWindow)).EndInit();
             this.PSettingsGeneral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBBack1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBReg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBApply1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBBack1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBVolumeReg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBVolumeLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBSubtitles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBSensitivity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBDifficulty)).EndInit();
@@ -740,8 +774,8 @@
         private System.Windows.Forms.PictureBox PBWindow;
         private System.Windows.Forms.Panel PSettingsGeneral;
         private System.Windows.Forms.PictureBox PBBack1;
-        private System.Windows.Forms.PictureBox PBReg;
-        private System.Windows.Forms.PictureBox PBVolume;
+        private System.Windows.Forms.PictureBox PBVolumeReg;
+        private System.Windows.Forms.PictureBox PBVolumeLine;
         private System.Windows.Forms.PictureBox PBApply1;
         private System.Windows.Forms.PictureBox PBSubtitles;
         private System.Windows.Forms.PictureBox PBSensitivity;
@@ -776,6 +810,8 @@
         private System.Windows.Forms.PictureBox PBGraphics2;
         private System.Windows.Forms.PictureBox PBControlL;
         private System.Windows.Forms.PictureBox PBGeneral2;
+        private System.Windows.Forms.ComboBox CBLanguageValue;
+        private System.Windows.Forms.PictureBox PBVolume;
     }
 }
 

@@ -31,6 +31,12 @@ namespace Stay_Alone_интерфейс
         public float Control1Height, Control1Width, Control1Top, Control1Left;
         public float Control2Height, Control2Width, Control2Top, Control2Left;
 
+        private void CBLanguageValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PBLanguage.Focus();
+        }
+
+        public float LanguageValueHeight, LanguageValueWidth, LanguageValueTop, LanguageValueLeft;
         public float Back1Height, Back1Width, Back1Top, Back1Left;
         public float Back2Height, Back2Width, Back2Top, Back2Left;
         public float Back3Height, Back3Width, Back3Top, Back3Left;
@@ -105,7 +111,6 @@ namespace Stay_Alone_интерфейс
         }
 
 
-
         private void PBGraphics2_Click(object sender, EventArgs e)
         {
             PSettingsGraphics.Visible = true;
@@ -116,11 +121,6 @@ namespace Stay_Alone_интерфейс
         {
             PMain.Visible = true;
             PSettingsControl.Visible = false;
-        }
-
-        private void PBMovementRight_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void PBYes_Click(object sender, EventArgs e)
@@ -148,8 +148,8 @@ namespace Stay_Alone_интерфейс
 
         
 
-        public float VolumeHeight, VolumeWidth, VolumeTop, VolumeLeft;
-        public float VRegHeight, VRegWidth, VRegTop, VRegLeft;
+        public float VolumeLineHeight, VolumeLineWidth, VolumeLineTop, VolumeLineLeft;
+        public float VolumeRegHeight, VolumeRegWidth, VolumeRegTop, VolumeRegLeft;
 
         public static float KHeight, KWidth;  //Коэффициентs изменения формы
         public int Min; // Позиция при минимальной громкости
@@ -159,17 +159,19 @@ namespace Stay_Alone_интерфейс
         public FMainMenu()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
         }
         public void MinMaxReg() // Функция определения миним-го и максим-го положений регулятора громкости
         {
-            Min = (int)(PBVolume.Left + KWidth * 30); // Минимум от левого края формы в пикселях
-            Max = (int)(PBVolume.Left + PBVolume.Width   - KWidth * 17); // Максимум от левого края формы в пикселях
+            Min = (int)(PBVolumeLine.Left + KWidth * 30); // Минимум от левого края формы в пикселях
+            Max = (int)(PBVolumeLine.Left + PBVolumeLine.Width   - KWidth * 17); // Максимум от левого края формы в пикселях
         }
 
         private void FMainMenu_Load(object sender, EventArgs e)
         {
-            //this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
+            Visible = false;
+
             PMain.Dock = DockStyle.Fill;
             PExit.Dock = DockStyle.Fill;
             PExit.Visible = false;
@@ -180,23 +182,25 @@ namespace Stay_Alone_интерфейс
             PSettingsControl.Dock = DockStyle.Fill;
             PSettingsControl.Visible = false;
 
+            CBLanguageValue.SelectedIndex = 0;
+
             try  // Загружаем картинки из папки Images при запуске EXE
             {
                 //TP0_Main.BackgroundImage = Image.FromFile("Images\\Background.png");
-                PMain.BackgroundImage = Image.FromFile("Images\\Background.png");
+                //PMain.BackgroundImage = Image.FromFile("Images\\Background.png");
                 PBName.Image = Image.FromFile("Images\\StayAlone.png");
                 PBPlay.Image = Image.FromFile("Images\\Play.png");
                 PBSettings.Image = Image.FromFile("Images\\Settings.png");
                 PBExit.Image = Image.FromFile("Images\\Exit.png");
                 
                 //TP1_Exit.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
-                PExit.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                //PExit.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBWindow.Image = Image.FromFile("Images\\Window.png");
                 PBYes.Image = Image.FromFile("Images\\Yes.png");
                 PBNo.Image = Image.FromFile("Images\\No.png");
                 
                 //TP2_SettingsGeneral.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
-                PSettingsGeneral.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                //PSettingsGeneral.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneralL.Image = Image.FromFile("Images\\GeneralWithLine.png");
                 PBGraphics1.Image = Image.FromFile("Images\\Graphics.png");
                 PBControl1.Image = Image.FromFile("Images\\Control.png");
@@ -206,11 +210,11 @@ namespace Stay_Alone_интерфейс
                 PBDifficulty.Image = Image.FromFile("Images\\Difficulty.png");
                 PBSensitivity.Image = Image.FromFile("Images\\Sensitivity.png");
                 PBSubtitles.Image = Image.FromFile("Images\\Subtitles.png");
-                PBVolume.Image = Image.FromFile("Images\\Volume.png");
-                PBReg.Image = Image.FromFile("Images\\VolumeReg.png");
+                PBVolumeLine.Image = Image.FromFile("Images\\Line.png");
+                PBVolumeReg.Image = Image.FromFile("Images\\Reg.png");
 
                 //TP3_SettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
-                PSettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                //PSettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneral1.Image = Image.FromFile("Images\\General.png");
                 PBGraphicsL.Image = Image.FromFile("Images\\GraphicsWithLine.png");
                 PBControl2.Image = Image.FromFile("Images\\Control.png");
@@ -225,7 +229,7 @@ namespace Stay_Alone_интерфейс
                 PBFullScreen.Image = Image.FromFile("Images\\FullScreen.png");
 
                 //TP4_SettingsControl.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
-                PSettingsControl.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
+                //PSettingsControl.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 PBGeneral2.Image = Image.FromFile("Images\\General.png");
                 PBGraphics2.Image = Image.FromFile("Images\\Graphics.png");
                 PBControlL.Image = Image.FromFile("Images\\ControlWithLine.png");
@@ -366,6 +370,11 @@ namespace Stay_Alone_интерфейс
             LanguageTop = PBLanguage.Top;
             LanguageLeft = PBLanguage.Left;
 
+            LanguageValueHeight = CBLanguageValue.Height;
+            LanguageValueWidth = CBLanguageValue.Width;
+            LanguageValueTop = CBLanguageValue.Top;
+            LanguageValueLeft = CBLanguageValue.Left;
+
             DifficultyHeight = PBDifficulty.Height;
             DifficultyWidth = PBDifficulty.Width;
             DifficultyTop = PBDifficulty.Top;
@@ -451,32 +460,31 @@ namespace Stay_Alone_интерфейс
             MovementRightTop = PBMovementRight.Top;
             MovementRightLeft = PBMovementRight.Left;
 
+            VolumeLineHeight = PBVolumeLine.Height;
+            VolumeLineWidth = PBVolumeLine.Width;
+            VolumeLineTop = PBVolumeLine.Top;
+            VolumeLineLeft = PBVolumeLine.Left;
 
-
-
-
-
-            VolumeHeight = PBVolume.Height;
-            VolumeWidth = PBVolume.Width;
-            VolumeTop = PBVolume.Top;
-            VolumeLeft = PBVolume.Left;
-
-            VRegHeight = PBReg.Height;
-            VRegWidth = PBReg.Width;
-            VRegTop = PBReg.Top;
-            VRegLeft = PBReg.Left;
+            VolumeRegHeight = PBVolumeReg.Height;
+            VolumeRegWidth = PBVolumeReg.Width;
+            VolumeRegTop = PBVolumeReg.Top;
+            VolumeRegLeft = PBVolumeReg.Left;
 
             MinMaxReg();
-            PosRegProc = (int)(100 * (VRegLeft - Min) / (Max - Min)); // Позиция регулятора в процентах громкости
+            PosRegProc = (int)(100 * (VolumeRegLeft - Min) / (Max - Min)); // Позиция регулятора в процентах громкости
 
             SystemVolumeConfigurator SVCClass = new SystemVolumeConfigurator(); // Вызываем класс SystemVolumeConfigurator из файла
             SVCClass.SetVolume(PosRegProc); // Вызываем из класса SystemVolumeConfigurator функцию SetVolume
 
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Riders_on_the_Storm);
             player.PlayLooping(); // PlayLooping - проигрывает музыку по кругу
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            Visible = true;
         }
 
-        
+
 
         private void FMainMenu_Resize(object sender, EventArgs e)
         {
@@ -621,6 +629,12 @@ namespace Stay_Alone_интерфейс
             PBLanguage.Left = (int)(KWidth * LanguageLeft);
             PBLanguage.Refresh();
 
+            CBLanguageValue.Height = (int)(KHeight * LanguageValueHeight);
+            CBLanguageValue.Width = (int)(KWidth * LanguageValueWidth);
+            CBLanguageValue.Top = (int)(KHeight * LanguageValueTop);
+            CBLanguageValue.Left = (int)(KWidth * LanguageValueLeft);
+            CBLanguageValue.Refresh();
+
             PBDifficulty.Height = (int)(KHeight * DifficultyHeight);
             PBDifficulty.Width = (int)(KWidth * DifficultyWidth);
             PBDifficulty.Top = (int)(KHeight * DifficultyTop);
@@ -724,27 +738,27 @@ namespace Stay_Alone_интерфейс
             PBMovementRight.Refresh();
 
 
-            PBVolume.Height = (int)(KHeight * VolumeHeight);
-            PBVolume.Width = (int)(KWidth * VolumeWidth);
-            PBVolume.Top = (int)(KHeight * VolumeTop);
-            PBVolume.Left = (int)(KWidth * VolumeLeft);
-            PBVolume.Refresh();
-            PBReg.Height = (int)(KHeight * VRegHeight);
-            PBReg.Width = (int)(KWidth * VRegWidth);
-            PBReg.Top = (int)(KHeight * VRegTop);
-            //PBReg.Left = (int)(KWidth * VRegLeft);
-            PBReg.Refresh();
+            PBVolumeLine.Height = (int)(KHeight * VolumeLineHeight);
+            PBVolumeLine.Width = (int)(KWidth * VolumeLineWidth);
+            PBVolumeLine.Top = (int)(KHeight * VolumeLineTop);
+            PBVolumeLine.Left = (int)(KWidth * VolumeLineLeft);
+            PBVolumeLine.Refresh();
+            PBVolumeReg.Height = (int)(KHeight * VolumeRegHeight);
+            PBVolumeReg.Width = (int)(KWidth * VolumeRegWidth);
+            PBVolumeReg.Top = (int)(KHeight * VolumeRegTop);
+            //PBVolumeReg.Left = (int)(KWidth * VRegLeft);
+            PBVolumeReg.Refresh();
 
             MinMaxReg();
-            PBReg.Left = (int)(PosRegProc * (Max - Min) / 100 + Min); // Позиция регулятора от левого края формы в пикселях
+            PBVolumeReg.Left = (int)(PosRegProc * (Max - Min) / 100 + Min); // Позиция регулятора от левого края формы в пикселях
         }
 
-        private void PBReg_MouseMove(object sender, MouseEventArgs e)
+        private void PBVolumeReg_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && Cursor.Position.X - Left >= Min && Cursor.Position.X - Left <= Max)
-                    PBReg.Location = new Point((int)(Cursor.Position.X - Left - KWidth * 10), PBVolume.Top);
+                PBVolumeReg.Location = new Point((int)(Cursor.Position.X - Left - KWidth * 10), PBVolumeLine.Top);
 
-            PosRegProc = (int)(100 * (PBReg.Left - Min) / (Max - Min)); // Позиция регулятора в процентах громкости
+            PosRegProc = (int)(100 * (PBVolumeReg.Left - Min) / (Max - Min)); // Позиция регулятора в процентах громкости
 
             SystemVolumeConfigurator SVCClass = new SystemVolumeConfigurator(); // Вызываем класс SystemVolumeConfigurator из файла
             SVCClass.SetVolume(PosRegProc); // Вызываем из класса SystemVolumeConfigurator функцию SetVolume
