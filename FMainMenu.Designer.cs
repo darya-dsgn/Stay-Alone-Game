@@ -39,6 +39,10 @@
             this.PBYes = new System.Windows.Forms.PictureBox();
             this.PBWindow = new System.Windows.Forms.PictureBox();
             this.PSettingsGeneral = new System.Windows.Forms.Panel();
+            this.PBCheckSubtitles = new System.Windows.Forms.PictureBox();
+            this.PBSensitivityReg = new System.Windows.Forms.PictureBox();
+            this.PBSensitivityLine = new System.Windows.Forms.PictureBox();
+            this.CBDifficultyValue = new System.Windows.Forms.ComboBox();
             this.PBVolume = new System.Windows.Forms.PictureBox();
             this.PBApply1 = new System.Windows.Forms.PictureBox();
             this.CBLanguageValue = new System.Windows.Forms.ComboBox();
@@ -88,6 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBYes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBWindow)).BeginInit();
             this.PSettingsGeneral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCheckSubtitles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBSensitivityReg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBSensitivityLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBApply1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBBack1)).BeginInit();
@@ -136,9 +143,9 @@
             this.PMain.Controls.Add(this.PBExit);
             this.PMain.Controls.Add(this.PBSettings);
             this.PMain.Controls.Add(this.PBPlay);
-            this.PMain.Location = new System.Drawing.Point(12, 336);
+            this.PMain.Location = new System.Drawing.Point(12, 332);
             this.PMain.Name = "PMain";
-            this.PMain.Size = new System.Drawing.Size(99, 48);
+            this.PMain.Size = new System.Drawing.Size(97, 90);
             this.PMain.TabIndex = 1;
             // 
             // PBName
@@ -202,10 +209,10 @@
             // PBNo
             // 
             this.PBNo.BackColor = System.Drawing.Color.Black;
-            this.PBNo.Location = new System.Drawing.Point(329, 173);
+            this.PBNo.Location = new System.Drawing.Point(336, 180);
             this.PBNo.Margin = new System.Windows.Forms.Padding(2);
             this.PBNo.Name = "PBNo";
-            this.PBNo.Size = new System.Drawing.Size(54, 54);
+            this.PBNo.Size = new System.Drawing.Size(51, 54);
             this.PBNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBNo.TabIndex = 5;
             this.PBNo.TabStop = false;
@@ -214,10 +221,10 @@
             // PBYes
             // 
             this.PBYes.BackColor = System.Drawing.Color.Black;
-            this.PBYes.Location = new System.Drawing.Point(217, 173);
+            this.PBYes.Location = new System.Drawing.Point(224, 180);
             this.PBYes.Margin = new System.Windows.Forms.Padding(2);
             this.PBYes.Name = "PBYes";
-            this.PBYes.Size = new System.Drawing.Size(54, 54);
+            this.PBYes.Size = new System.Drawing.Size(51, 54);
             this.PBYes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBYes.TabIndex = 4;
             this.PBYes.TabStop = false;
@@ -226,7 +233,7 @@
             // PBWindow
             // 
             this.PBWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBWindow.Location = new System.Drawing.Point(149, 88);
+            this.PBWindow.Location = new System.Drawing.Point(156, 95);
             this.PBWindow.Name = "PBWindow";
             this.PBWindow.Size = new System.Drawing.Size(300, 180);
             this.PBWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,6 +244,10 @@
             // 
             this.PSettingsGeneral.BackColor = System.Drawing.Color.Black;
             this.PSettingsGeneral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PSettingsGeneral.Controls.Add(this.PBCheckSubtitles);
+            this.PSettingsGeneral.Controls.Add(this.PBSensitivityReg);
+            this.PSettingsGeneral.Controls.Add(this.PBSensitivityLine);
+            this.PSettingsGeneral.Controls.Add(this.CBDifficultyValue);
             this.PSettingsGeneral.Controls.Add(this.PBVolume);
             this.PSettingsGeneral.Controls.Add(this.PBApply1);
             this.PSettingsGeneral.Controls.Add(this.CBLanguageValue);
@@ -256,10 +267,63 @@
             this.PSettingsGeneral.Size = new System.Drawing.Size(600, 354);
             this.PSettingsGeneral.TabIndex = 3;
             // 
+            // PBCheckSubtitles
+            // 
+            this.PBCheckSubtitles.Location = new System.Drawing.Point(429, 218);
+            this.PBCheckSubtitles.Name = "PBCheckSubtitles";
+            this.PBCheckSubtitles.Size = new System.Drawing.Size(27, 27);
+            this.PBCheckSubtitles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBCheckSubtitles.TabIndex = 35;
+            this.PBCheckSubtitles.TabStop = false;
+            this.PBCheckSubtitles.Click += new System.EventHandler(this.PBCheckSubtitles_Click);
+            // 
+            // PBSensitivityReg
+            // 
+            this.PBSensitivityReg.BackColor = System.Drawing.Color.Black;
+            this.PBSensitivityReg.Location = new System.Drawing.Point(341, 175);
+            this.PBSensitivityReg.Margin = new System.Windows.Forms.Padding(0);
+            this.PBSensitivityReg.Name = "PBSensitivityReg";
+            this.PBSensitivityReg.Size = new System.Drawing.Size(10, 26);
+            this.PBSensitivityReg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBSensitivityReg.TabIndex = 34;
+            this.PBSensitivityReg.TabStop = false;
+            this.PBSensitivityReg.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PBSensitivityReg_MouseMove);
+            // 
+            // PBSensitivityLine
+            // 
+            this.PBSensitivityLine.BackColor = System.Drawing.Color.Black;
+            this.PBSensitivityLine.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PBSensitivityLine.ErrorImage")));
+            this.PBSensitivityLine.InitialImage = ((System.Drawing.Image)(resources.GetObject("PBSensitivityLine.InitialImage")));
+            this.PBSensitivityLine.Location = new System.Drawing.Point(302, 175);
+            this.PBSensitivityLine.Margin = new System.Windows.Forms.Padding(2);
+            this.PBSensitivityLine.Name = "PBSensitivityLine";
+            this.PBSensitivityLine.Size = new System.Drawing.Size(154, 59);
+            this.PBSensitivityLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBSensitivityLine.TabIndex = 33;
+            this.PBSensitivityLine.TabStop = false;
+            // 
+            // CBDifficultyValue
+            // 
+            this.CBDifficultyValue.BackColor = System.Drawing.Color.Black;
+            this.CBDifficultyValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBDifficultyValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBDifficultyValue.Font = new System.Drawing.Font("Papyrus", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CBDifficultyValue.ForeColor = System.Drawing.Color.White;
+            this.CBDifficultyValue.FormattingEnabled = true;
+            this.CBDifficultyValue.Items.AddRange(new object[] {
+            "Easy",
+            "Normal",
+            "Hard"});
+            this.CBDifficultyValue.Location = new System.Drawing.Point(382, 138);
+            this.CBDifficultyValue.Name = "CBDifficultyValue";
+            this.CBDifficultyValue.Size = new System.Drawing.Size(71, 46);
+            this.CBDifficultyValue.TabIndex = 32;
+            this.CBDifficultyValue.SelectedIndexChanged += new System.EventHandler(this.CBDifficultyValue_SelectedIndexChanged);
+            // 
             // PBVolume
             // 
             this.PBVolume.BackColor = System.Drawing.Color.Black;
-            this.PBVolume.Location = new System.Drawing.Point(146, 244);
+            this.PBVolume.Location = new System.Drawing.Point(144, 249);
             this.PBVolume.Name = "PBVolume";
             this.PBVolume.Size = new System.Drawing.Size(100, 32);
             this.PBVolume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -269,12 +333,13 @@
             // PBApply1
             // 
             this.PBApply1.BackColor = System.Drawing.Color.Black;
-            this.PBApply1.Location = new System.Drawing.Point(423, 282);
+            this.PBApply1.Location = new System.Drawing.Point(423, 287);
             this.PBApply1.Name = "PBApply1";
             this.PBApply1.Size = new System.Drawing.Size(71, 39);
             this.PBApply1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBApply1.TabIndex = 27;
             this.PBApply1.TabStop = false;
+            this.PBApply1.Click += new System.EventHandler(this.PBApply1_Click);
             // 
             // CBLanguageValue
             // 
@@ -286,9 +351,8 @@
             this.CBLanguageValue.FormattingEnabled = true;
             this.CBLanguageValue.Items.AddRange(new object[] {
             "English",
-            "Русский",
-            "Polski"});
-            this.CBLanguageValue.Location = new System.Drawing.Point(382, 97);
+            "Русский"});
+            this.CBLanguageValue.Location = new System.Drawing.Point(382, 102);
             this.CBLanguageValue.Name = "CBLanguageValue";
             this.CBLanguageValue.Size = new System.Drawing.Size(71, 46);
             this.CBLanguageValue.TabIndex = 30;
@@ -297,7 +361,7 @@
             // PBBack1
             // 
             this.PBBack1.BackColor = System.Drawing.Color.Black;
-            this.PBBack1.Location = new System.Drawing.Point(104, 282);
+            this.PBBack1.Location = new System.Drawing.Point(104, 287);
             this.PBBack1.Name = "PBBack1";
             this.PBBack1.Size = new System.Drawing.Size(58, 39);
             this.PBBack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -308,7 +372,7 @@
             // PBVolumeReg
             // 
             this.PBVolumeReg.BackColor = System.Drawing.Color.Black;
-            this.PBVolumeReg.Location = new System.Drawing.Point(341, 250);
+            this.PBVolumeReg.Location = new System.Drawing.Point(341, 255);
             this.PBVolumeReg.Margin = new System.Windows.Forms.Padding(0);
             this.PBVolumeReg.Name = "PBVolumeReg";
             this.PBVolumeReg.Size = new System.Drawing.Size(10, 26);
@@ -322,7 +386,7 @@
             this.PBVolumeLine.BackColor = System.Drawing.Color.Black;
             this.PBVolumeLine.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PBVolumeLine.ErrorImage")));
             this.PBVolumeLine.InitialImage = ((System.Drawing.Image)(resources.GetObject("PBVolumeLine.InitialImage")));
-            this.PBVolumeLine.Location = new System.Drawing.Point(302, 250);
+            this.PBVolumeLine.Location = new System.Drawing.Point(302, 255);
             this.PBVolumeLine.Margin = new System.Windows.Forms.Padding(2);
             this.PBVolumeLine.Name = "PBVolumeLine";
             this.PBVolumeLine.Size = new System.Drawing.Size(154, 59);
@@ -333,7 +397,7 @@
             // PBSubtitles
             // 
             this.PBSubtitles.BackColor = System.Drawing.Color.Black;
-            this.PBSubtitles.Location = new System.Drawing.Point(144, 208);
+            this.PBSubtitles.Location = new System.Drawing.Point(144, 213);
             this.PBSubtitles.Name = "PBSubtitles";
             this.PBSubtitles.Size = new System.Drawing.Size(100, 32);
             this.PBSubtitles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -343,7 +407,7 @@
             // PBSensitivity
             // 
             this.PBSensitivity.BackColor = System.Drawing.Color.Black;
-            this.PBSensitivity.Location = new System.Drawing.Point(144, 170);
+            this.PBSensitivity.Location = new System.Drawing.Point(144, 175);
             this.PBSensitivity.Name = "PBSensitivity";
             this.PBSensitivity.Size = new System.Drawing.Size(114, 38);
             this.PBSensitivity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -353,7 +417,7 @@
             // PBDifficulty
             // 
             this.PBDifficulty.BackColor = System.Drawing.Color.Black;
-            this.PBDifficulty.Location = new System.Drawing.Point(144, 133);
+            this.PBDifficulty.Location = new System.Drawing.Point(144, 138);
             this.PBDifficulty.Name = "PBDifficulty";
             this.PBDifficulty.Size = new System.Drawing.Size(100, 33);
             this.PBDifficulty.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -363,7 +427,7 @@
             // PBLanguage
             // 
             this.PBLanguage.BackColor = System.Drawing.Color.Black;
-            this.PBLanguage.Location = new System.Drawing.Point(144, 89);
+            this.PBLanguage.Location = new System.Drawing.Point(144, 94);
             this.PBLanguage.Name = "PBLanguage";
             this.PBLanguage.Size = new System.Drawing.Size(100, 38);
             this.PBLanguage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -373,7 +437,7 @@
             // PBControl1
             // 
             this.PBControl1.BackColor = System.Drawing.Color.Black;
-            this.PBControl1.Location = new System.Drawing.Point(392, 31);
+            this.PBControl1.Location = new System.Drawing.Point(392, 36);
             this.PBControl1.Name = "PBControl1";
             this.PBControl1.Size = new System.Drawing.Size(102, 37);
             this.PBControl1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -384,7 +448,7 @@
             // PBGraphics1
             // 
             this.PBGraphics1.BackColor = System.Drawing.Color.Black;
-            this.PBGraphics1.Location = new System.Drawing.Point(251, 29);
+            this.PBGraphics1.Location = new System.Drawing.Point(251, 34);
             this.PBGraphics1.Name = "PBGraphics1";
             this.PBGraphics1.Size = new System.Drawing.Size(114, 44);
             this.PBGraphics1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -395,7 +459,7 @@
             // PBGeneralL
             // 
             this.PBGeneralL.BackColor = System.Drawing.Color.Black;
-            this.PBGeneralL.Location = new System.Drawing.Point(104, 22);
+            this.PBGeneralL.Location = new System.Drawing.Point(104, 27);
             this.PBGeneralL.Name = "PBGeneralL";
             this.PBGeneralL.Size = new System.Drawing.Size(114, 60);
             this.PBGeneralL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -426,7 +490,7 @@
             // PBSmoothing
             // 
             this.PBSmoothing.BackColor = System.Drawing.Color.Black;
-            this.PBSmoothing.Location = new System.Drawing.Point(143, 233);
+            this.PBSmoothing.Location = new System.Drawing.Point(143, 238);
             this.PBSmoothing.Name = "PBSmoothing";
             this.PBSmoothing.Size = new System.Drawing.Size(94, 28);
             this.PBSmoothing.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -436,7 +500,7 @@
             // PBShadowQuality
             // 
             this.PBShadowQuality.BackColor = System.Drawing.Color.Black;
-            this.PBShadowQuality.Location = new System.Drawing.Point(143, 168);
+            this.PBShadowQuality.Location = new System.Drawing.Point(143, 173);
             this.PBShadowQuality.Name = "PBShadowQuality";
             this.PBShadowQuality.Size = new System.Drawing.Size(142, 34);
             this.PBShadowQuality.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -446,7 +510,7 @@
             // PBEffectQuality
             // 
             this.PBEffectQuality.BackColor = System.Drawing.Color.Black;
-            this.PBEffectQuality.Location = new System.Drawing.Point(143, 202);
+            this.PBEffectQuality.Location = new System.Drawing.Point(143, 207);
             this.PBEffectQuality.Name = "PBEffectQuality";
             this.PBEffectQuality.Size = new System.Drawing.Size(115, 33);
             this.PBEffectQuality.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -456,7 +520,7 @@
             // PBTextureFiltering
             // 
             this.PBTextureFiltering.BackColor = System.Drawing.Color.Black;
-            this.PBTextureFiltering.Location = new System.Drawing.Point(143, 137);
+            this.PBTextureFiltering.Location = new System.Drawing.Point(143, 142);
             this.PBTextureFiltering.Name = "PBTextureFiltering";
             this.PBTextureFiltering.Size = new System.Drawing.Size(143, 33);
             this.PBTextureFiltering.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -466,7 +530,7 @@
             // PBResolution
             // 
             this.PBResolution.BackColor = System.Drawing.Color.Black;
-            this.PBResolution.Location = new System.Drawing.Point(143, 73);
+            this.PBResolution.Location = new System.Drawing.Point(143, 78);
             this.PBResolution.Name = "PBResolution";
             this.PBResolution.Size = new System.Drawing.Size(100, 30);
             this.PBResolution.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -476,7 +540,7 @@
             // PBFullScreen
             // 
             this.PBFullScreen.BackColor = System.Drawing.Color.Black;
-            this.PBFullScreen.Location = new System.Drawing.Point(144, 259);
+            this.PBFullScreen.Location = new System.Drawing.Point(144, 264);
             this.PBFullScreen.Name = "PBFullScreen";
             this.PBFullScreen.Size = new System.Drawing.Size(99, 28);
             this.PBFullScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -486,7 +550,7 @@
             // PBTextureQuality
             // 
             this.PBTextureQuality.BackColor = System.Drawing.Color.Black;
-            this.PBTextureQuality.Location = new System.Drawing.Point(143, 102);
+            this.PBTextureQuality.Location = new System.Drawing.Point(143, 107);
             this.PBTextureQuality.Name = "PBTextureQuality";
             this.PBTextureQuality.Size = new System.Drawing.Size(141, 38);
             this.PBTextureQuality.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -496,7 +560,7 @@
             // PBApply2
             // 
             this.PBApply2.BackColor = System.Drawing.Color.Black;
-            this.PBApply2.Location = new System.Drawing.Point(423, 282);
+            this.PBApply2.Location = new System.Drawing.Point(423, 287);
             this.PBApply2.Name = "PBApply2";
             this.PBApply2.Size = new System.Drawing.Size(71, 39);
             this.PBApply2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -506,7 +570,7 @@
             // PBBack2
             // 
             this.PBBack2.BackColor = System.Drawing.Color.Black;
-            this.PBBack2.Location = new System.Drawing.Point(104, 282);
+            this.PBBack2.Location = new System.Drawing.Point(104, 287);
             this.PBBack2.Name = "PBBack2";
             this.PBBack2.Size = new System.Drawing.Size(58, 39);
             this.PBBack2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -517,7 +581,7 @@
             // PBControl2
             // 
             this.PBControl2.BackColor = System.Drawing.Color.Black;
-            this.PBControl2.Location = new System.Drawing.Point(392, 31);
+            this.PBControl2.Location = new System.Drawing.Point(392, 36);
             this.PBControl2.Name = "PBControl2";
             this.PBControl2.Size = new System.Drawing.Size(102, 37);
             this.PBControl2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -528,7 +592,7 @@
             // PBGraphicsL
             // 
             this.PBGraphicsL.BackColor = System.Drawing.Color.Black;
-            this.PBGraphicsL.Location = new System.Drawing.Point(249, 22);
+            this.PBGraphicsL.Location = new System.Drawing.Point(249, 27);
             this.PBGraphicsL.Name = "PBGraphicsL";
             this.PBGraphicsL.Size = new System.Drawing.Size(117, 55);
             this.PBGraphicsL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -538,7 +602,7 @@
             // PBGeneral1
             // 
             this.PBGeneral1.BackColor = System.Drawing.Color.Black;
-            this.PBGeneral1.Location = new System.Drawing.Point(107, 32);
+            this.PBGeneral1.Location = new System.Drawing.Point(107, 37);
             this.PBGeneral1.Name = "PBGeneral1";
             this.PBGeneral1.Size = new System.Drawing.Size(108, 37);
             this.PBGeneral1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -570,7 +634,7 @@
             // PBMovingForward
             // 
             this.PBMovingForward.BackColor = System.Drawing.Color.Black;
-            this.PBMovingForward.Location = new System.Drawing.Point(143, 162);
+            this.PBMovingForward.Location = new System.Drawing.Point(143, 167);
             this.PBMovingForward.Name = "PBMovingForward";
             this.PBMovingForward.Size = new System.Drawing.Size(150, 32);
             this.PBMovingForward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -580,7 +644,7 @@
             // PBMovingBackwards
             // 
             this.PBMovingBackwards.BackColor = System.Drawing.Color.Black;
-            this.PBMovingBackwards.Location = new System.Drawing.Point(143, 192);
+            this.PBMovingBackwards.Location = new System.Drawing.Point(143, 197);
             this.PBMovingBackwards.Name = "PBMovingBackwards";
             this.PBMovingBackwards.Size = new System.Drawing.Size(165, 33);
             this.PBMovingBackwards.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -590,7 +654,7 @@
             // PBAttack
             // 
             this.PBAttack.BackColor = System.Drawing.Color.Black;
-            this.PBAttack.Location = new System.Drawing.Point(143, 134);
+            this.PBAttack.Location = new System.Drawing.Point(143, 139);
             this.PBAttack.Name = "PBAttack";
             this.PBAttack.Size = new System.Drawing.Size(62, 28);
             this.PBAttack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -600,7 +664,7 @@
             // PBMovementLeft
             // 
             this.PBMovementLeft.BackColor = System.Drawing.Color.Black;
-            this.PBMovementLeft.Location = new System.Drawing.Point(143, 223);
+            this.PBMovementLeft.Location = new System.Drawing.Point(143, 228);
             this.PBMovementLeft.Name = "PBMovementLeft";
             this.PBMovementLeft.Size = new System.Drawing.Size(196, 30);
             this.PBMovementLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -610,7 +674,7 @@
             // PBJump
             // 
             this.PBJump.BackColor = System.Drawing.Color.Black;
-            this.PBJump.Location = new System.Drawing.Point(143, 106);
+            this.PBJump.Location = new System.Drawing.Point(143, 111);
             this.PBJump.Name = "PBJump";
             this.PBJump.Size = new System.Drawing.Size(61, 33);
             this.PBJump.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -620,7 +684,7 @@
             // PBSquat
             // 
             this.PBSquat.BackColor = System.Drawing.Color.Black;
-            this.PBSquat.Location = new System.Drawing.Point(143, 73);
+            this.PBSquat.Location = new System.Drawing.Point(143, 78);
             this.PBSquat.Name = "PBSquat";
             this.PBSquat.Size = new System.Drawing.Size(64, 34);
             this.PBSquat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -630,7 +694,7 @@
             // PBMovementRight
             // 
             this.PBMovementRight.BackColor = System.Drawing.Color.Black;
-            this.PBMovementRight.Location = new System.Drawing.Point(144, 251);
+            this.PBMovementRight.Location = new System.Drawing.Point(144, 256);
             this.PBMovementRight.Name = "PBMovementRight";
             this.PBMovementRight.Size = new System.Drawing.Size(193, 32);
             this.PBMovementRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -640,7 +704,7 @@
             // PBApply3
             // 
             this.PBApply3.BackColor = System.Drawing.Color.Black;
-            this.PBApply3.Location = new System.Drawing.Point(423, 282);
+            this.PBApply3.Location = new System.Drawing.Point(423, 287);
             this.PBApply3.Name = "PBApply3";
             this.PBApply3.Size = new System.Drawing.Size(71, 39);
             this.PBApply3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -650,7 +714,7 @@
             // PBBack3
             // 
             this.PBBack3.BackColor = System.Drawing.Color.Black;
-            this.PBBack3.Location = new System.Drawing.Point(104, 282);
+            this.PBBack3.Location = new System.Drawing.Point(104, 287);
             this.PBBack3.Name = "PBBack3";
             this.PBBack3.Size = new System.Drawing.Size(58, 39);
             this.PBBack3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -661,7 +725,7 @@
             // PBGraphics2
             // 
             this.PBGraphics2.BackColor = System.Drawing.Color.Black;
-            this.PBGraphics2.Location = new System.Drawing.Point(251, 29);
+            this.PBGraphics2.Location = new System.Drawing.Point(251, 34);
             this.PBGraphics2.Name = "PBGraphics2";
             this.PBGraphics2.Size = new System.Drawing.Size(114, 44);
             this.PBGraphics2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -672,7 +736,7 @@
             // PBControlL
             // 
             this.PBControlL.BackColor = System.Drawing.Color.Black;
-            this.PBControlL.Location = new System.Drawing.Point(390, 22);
+            this.PBControlL.Location = new System.Drawing.Point(390, 27);
             this.PBControlL.Name = "PBControlL";
             this.PBControlL.Size = new System.Drawing.Size(105, 59);
             this.PBControlL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -682,7 +746,7 @@
             // PBGeneral2
             // 
             this.PBGeneral2.BackColor = System.Drawing.Color.Black;
-            this.PBGeneral2.Location = new System.Drawing.Point(107, 32);
+            this.PBGeneral2.Location = new System.Drawing.Point(107, 37);
             this.PBGeneral2.Name = "PBGeneral2";
             this.PBGeneral2.Size = new System.Drawing.Size(109, 37);
             this.PBGeneral2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -720,6 +784,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBYes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBWindow)).EndInit();
             this.PSettingsGeneral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBCheckSubtitles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBSensitivityReg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBSensitivityLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBApply1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBBack1)).EndInit();
@@ -812,6 +879,10 @@
         private System.Windows.Forms.PictureBox PBGeneral2;
         private System.Windows.Forms.ComboBox CBLanguageValue;
         private System.Windows.Forms.PictureBox PBVolume;
+        private System.Windows.Forms.ComboBox CBDifficultyValue;
+        private System.Windows.Forms.PictureBox PBSensitivityReg;
+        private System.Windows.Forms.PictureBox PBSensitivityLine;
+        private System.Windows.Forms.PictureBox PBCheckSubtitles;
     }
 }
 

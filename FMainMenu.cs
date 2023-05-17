@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
 
 namespace Stay_Alone_интерфейс
 {
     public partial class FMainMenu : Form
     {
+        public string PathINI, LanguageINI, DifficultyINI, SubtitlesINI;
+        public int SensINI, VolumeINI;
+
         public static float FormHeight, FormWidth, FormTop, FormLeft;
         public float NameHeight, NameWidth, NameTop, NameLeft;
         public float PlayHeight, PlayWidth, PlayTop, PlayLeft;
@@ -31,12 +35,54 @@ namespace Stay_Alone_интерфейс
         public float Control1Height, Control1Width, Control1Top, Control1Left;
         public float Control2Height, Control2Width, Control2Top, Control2Left;
 
+        private void SaveINI()
+        {
+            File.WriteAllText("Stay Alone Settings.ini", "Language:" + Environment.NewLine +
+                                                         LanguageINI + Environment.NewLine +
+                                                         "Difficulty:" + Environment.NewLine +
+                                                         DifficultyINI + Environment.NewLine +
+                                                         "Sensitivity Mouse:" + Environment.NewLine +
+                                                         SensINI.ToString() + Environment.NewLine +
+                                                         "Subtitles:" + Environment.NewLine +
+                                                         SubtitlesINI + Environment.NewLine +
+                                                         "Volume Sound:" + Environment.NewLine +
+                                                         VolumeINI.ToString());
+        }
         private void CBLanguageValue_SelectedIndexChanged(object sender, EventArgs e)
         {
             PBLanguage.Focus();
+            LanguageINI = CBLanguageValue.Text;
+        }
+        public float DifficultyValueHeight, DifficultyValueWidth, DifficultyValueTop, DifficultyValueLeft;
+
+        private void PBApply1_Click(object sender, EventArgs e)
+        {
+            SaveINI();
+        }
+
+        private void CBDifficultyValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PBDifficulty.Focus();
+            DifficultyINI = CBDifficultyValue.Text;
         }
 
         public float LanguageValueHeight, LanguageValueWidth, LanguageValueTop, LanguageValueLeft;
+
+        private void PBCheckSubtitles_Click(object sender, EventArgs e)
+        {
+            if (PBCheckSubtitles.Tag.ToString() == "No")
+            {
+                PBCheckSubtitles.Image = Image.FromFile("Images\\CheckYes.png");
+                PBCheckSubtitles.Tag = "Yes";
+            }
+            else
+            {
+                PBCheckSubtitles.Image = Image.FromFile("Images\\CheckNo.png");
+                PBCheckSubtitles.Tag = "No";
+            }
+            SubtitlesINI = PBCheckSubtitles.Tag.ToString();
+        }
+
         public float Back1Height, Back1Width, Back1Top, Back1Left;
         public float Back2Height, Back2Width, Back2Top, Back2Left;
         public float Back3Height, Back3Width, Back3Top, Back3Left;
@@ -47,6 +93,9 @@ namespace Stay_Alone_интерфейс
         public float DifficultyHeight, DifficultyWidth, DifficultyTop, DifficultyLeft;
         public float SensitivityHeight, SensitivityWidth, SensitivityTop, SensitivityLeft;
         public float SubtitlesHeight, SubtitlesWidth, SubtitlesTop, SubtitlesLeft;
+        public float CheckSubtitlesHeight, CheckSubtitlesWidth, CheckSubtitlesTop, CheckSubtitlesLeft;
+        public float VolumeHeight, VolumeWidth, VolumeTop, VolumeLeft;
+
         public float ResolutionHeight, ResolutionWidth, ResolutionTop, ResolutionLeft;
         public float TextureQualityHeight, TextureQualityWidth, TextureQualityTop, TextureQualityLeft;
         public float TextureFilteringHeight, TextureFilteringWidth, TextureFilteringTop, TextureFilteringLeft;
@@ -61,6 +110,7 @@ namespace Stay_Alone_интерфейс
         public float MovingBackwardsHeight, MovingBackwardsWidth, MovingBackwardsTop, MovingBackwardsLeft;
         public float MovementLeftHeight, MovementLeftWidth, MovementLeftTop, MovementLeftLeft;
         public float MovementRightHeight, MovementRightWidth, MovementRightTop, MovementRightLeft;
+
 
         private void PBNo_Click(object sender, EventArgs e)
         {
@@ -90,6 +140,7 @@ namespace Stay_Alone_интерфейс
         {
             PSettingsGeneral.Visible = true;
             PSettingsGraphics.Visible = false;
+            PBLanguage.Focus();
         }
 
         private void PBControl2_Click(object sender, EventArgs e)
@@ -108,6 +159,7 @@ namespace Stay_Alone_интерфейс
         {
             PSettingsGeneral.Visible = true;
             PSettingsControl.Visible = false;
+            PBLanguage.Focus();
         }
 
 
@@ -146,16 +198,17 @@ namespace Stay_Alone_интерфейс
             FormLeft = Left;
         }
 
-        
-
         public float VolumeLineHeight, VolumeLineWidth, VolumeLineTop, VolumeLineLeft;
         public float VolumeRegHeight, VolumeRegWidth, VolumeRegTop, VolumeRegLeft;
+        public float SensitivityLineHeight, SensitivityLineWidth, SensitivityLineTop, SensitivityLineLeft;
+        public float SensitivityRegHeight, SensitivityRegWidth, SensitivityRegTop, SensitivityRegLeft;
 
         public static float KHeight, KWidth;  //Коэффициентs изменения формы
         public int Min; // Позиция при минимальной громкости
         public int Max; // Позиция при максимальной громкости
 
         public int PosRegProc; // Позиция регулятора громкости в процентах
+        public int PosRegProcSens; // Позиция регулятора чувствительности мыши в процентах
         public FMainMenu()
         {
             InitializeComponent();
@@ -170,6 +223,24 @@ namespace Stay_Alone_интерфейс
 
         private void FMainMenu_Load(object sender, EventArgs e)
         {
+            PathINI = "Stay Alone Settings.ini"; // Имя ini файла
+            try
+            {
+                LanguageINI = File.ReadLines(PathINI).Skip(1).First(); // читаем 2ую строку из файла
+                CBLanguageValue.SelectedItem = LanguageINI;
+                DifficultyINI = File.ReadLines(PathINI).Skip(3).First(); //читаем 4ую строку из файла
+                CBDifficultyValue.SelectedItem = DifficultyINI;
+                SensINI = int.Parse(File.ReadLines(PathINI).Skip(5).First()); // читаем 6ую строку из файла
+                SubtitlesINI = File.ReadLines(PathINI).Skip(7).First(); // читаем 8ую строку из файла
+                PBCheckSubtitles.Image = Image.FromFile("Images\\Check" + SubtitlesINI + ".png");
+                PBCheckSubtitles.Tag = SubtitlesINI;
+                VolumeINI = int.Parse(File.ReadLines(PathINI).Skip(9).First()); // читаем 10ую строку из файла
+            }
+            catch (Exception) { }
+
+            PBLanguage.Focus();
+
+
             Visible = false;
 
             PMain.Dock = DockStyle.Fill;
@@ -182,7 +253,8 @@ namespace Stay_Alone_интерфейс
             PSettingsControl.Dock = DockStyle.Fill;
             PSettingsControl.Visible = false;
 
-            CBLanguageValue.SelectedIndex = 0;
+            //CBLanguageValue.SelectedIndex = 0;
+            //CBDifficultyValue.SelectedIndex = 0;
 
             try  // Загружаем картинки из папки Images при запуске EXE
             {
@@ -210,8 +282,13 @@ namespace Stay_Alone_интерфейс
                 PBDifficulty.Image = Image.FromFile("Images\\Difficulty.png");
                 PBSensitivity.Image = Image.FromFile("Images\\Sensitivity.png");
                 PBSubtitles.Image = Image.FromFile("Images\\Subtitles.png");
+                PBVolume.Image = Image.FromFile("Images\\Volume.png");
                 PBVolumeLine.Image = Image.FromFile("Images\\Line.png");
                 PBVolumeReg.Image = Image.FromFile("Images\\Reg.png");
+                PBSensitivityLine.Image = Image.FromFile("Images\\Line.png");
+                PBSensitivityReg.Image = Image.FromFile("Images\\Reg.png");
+                //PBCheckSubtitles.Image = Image.FromFile("Images\\CheckNo.png");
+                //PBCheckSubtitles.Tag = "No";
 
                 //TP3_SettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
                 //PSettingsGraphics.BackgroundImage = Image.FromFile("Images\\BackgroundBlurred.png");
@@ -380,15 +457,40 @@ namespace Stay_Alone_интерфейс
             DifficultyTop = PBDifficulty.Top;
             DifficultyLeft = PBDifficulty.Left;
 
+            DifficultyValueHeight = CBDifficultyValue.Height;
+            DifficultyValueWidth = CBDifficultyValue.Width;
+            DifficultyValueTop = CBDifficultyValue.Top;
+            DifficultyValueLeft = CBDifficultyValue.Left;
+
             SensitivityHeight = PBSensitivity.Height;
             SensitivityWidth = PBSensitivity.Width;
             SensitivityTop = PBSensitivity.Top;
             SensitivityLeft = PBSensitivity.Left;
 
+            SensitivityLineHeight = PBSensitivityLine.Height;
+            SensitivityLineWidth = PBSensitivityLine.Width;
+            SensitivityLineTop = PBSensitivityLine.Top;
+            SensitivityLineLeft = PBSensitivityLine.Left;
+
+            SensitivityRegHeight = PBSensitivityReg.Height;
+            SensitivityRegWidth = PBSensitivityReg.Width;
+            SensitivityRegTop = PBSensitivityReg.Top;
+            SensitivityRegLeft = PBSensitivityReg.Left;
+
             SubtitlesHeight = PBSubtitles.Height;
             SubtitlesWidth = PBSubtitles.Width;
             SubtitlesTop = PBSubtitles.Top;
             SubtitlesLeft = PBSubtitles.Left;
+
+            CheckSubtitlesHeight = PBCheckSubtitles.Height;
+            CheckSubtitlesWidth = PBCheckSubtitles.Width;
+            CheckSubtitlesTop = PBCheckSubtitles.Top;
+            CheckSubtitlesLeft = PBCheckSubtitles.Left;
+
+            VolumeHeight = PBVolume.Height;
+            VolumeWidth = PBVolume.Width;
+            VolumeTop = PBVolume.Top;
+            VolumeLeft = PBVolume.Left;
 
             ResolutionHeight = PBResolution.Height;
             ResolutionWidth = PBResolution.Width;
@@ -471,7 +573,10 @@ namespace Stay_Alone_интерфейс
             VolumeRegLeft = PBVolumeReg.Left;
 
             MinMaxReg();
-            PosRegProc = (int)(100 * (VolumeRegLeft - Min) / (Max - Min)); // Позиция регулятора в процентах громкости
+            //PosRegProc = (int)(100 * (VolumeRegLeft - Min) / (Max - Min)); // Позиция регулятора в процентах громкости
+            //PosRegProcSens = (int)(100 * (VolumeRegLeft - Min) / (Max - Min)); // Позиция регулятора в процентах чувствительности мыши
+            PosRegProc = VolumeINI;
+            PosRegProcSens = SensINI;
 
             SystemVolumeConfigurator SVCClass = new SystemVolumeConfigurator(); // Вызываем класс SystemVolumeConfigurator из файла
             SVCClass.SetVolume(PosRegProc); // Вызываем из класса SystemVolumeConfigurator функцию SetVolume
@@ -641,17 +746,47 @@ namespace Stay_Alone_интерфейс
             PBDifficulty.Left = (int)(KWidth * DifficultyLeft);
             PBDifficulty.Refresh();
 
+            CBDifficultyValue.Height = (int)(KHeight * DifficultyValueHeight);
+            CBDifficultyValue.Width = (int)(KWidth * DifficultyValueWidth);
+            CBDifficultyValue.Top = (int)(KHeight * DifficultyValueTop);
+            CBDifficultyValue.Left = (int)(KWidth * DifficultyValueLeft);
+            CBDifficultyValue.Refresh();
+
             PBSensitivity.Height = (int)(KHeight * SensitivityHeight);
             PBSensitivity.Width = (int)(KWidth * SensitivityWidth);
             PBSensitivity.Top = (int)(KHeight * SensitivityTop);
             PBSensitivity.Left = (int)(KWidth * SensitivityLeft);
             PBSensitivity.Refresh();
 
+            PBSensitivityLine.Height = (int)(KHeight * SensitivityLineHeight);
+            PBSensitivityLine.Width = (int)(KWidth * SensitivityLineWidth);
+            PBSensitivityLine.Top = (int)(KHeight * SensitivityLineTop);
+            PBSensitivityLine.Left = (int)(KWidth * SensitivityLineLeft);
+            PBSensitivityLine.Refresh();
+
+            PBSensitivityReg.Height = (int)(KHeight * SensitivityRegHeight);
+            PBSensitivityReg.Width = (int)(KWidth * SensitivityRegWidth);
+            PBSensitivityReg.Top = (int)(KHeight * SensitivityRegTop);
+            PBSensitivityReg.Left = (int)(KWidth * SensitivityRegLeft);
+            PBSensitivityReg.Refresh();
+
             PBSubtitles.Height = (int)(KHeight * SubtitlesHeight);
             PBSubtitles.Width = (int)(KWidth * SubtitlesWidth);
             PBSubtitles.Top = (int)(KHeight * SubtitlesTop);
             PBSubtitles.Left = (int)(KWidth * SubtitlesLeft);
             PBSubtitles.Refresh();
+
+            PBCheckSubtitles.Height = (int)(KHeight * CheckSubtitlesHeight);
+            PBCheckSubtitles.Width = (int)(KWidth * CheckSubtitlesWidth);
+            PBCheckSubtitles.Top = (int)(KHeight * CheckSubtitlesTop);
+            PBCheckSubtitles.Left = (int)(KWidth * CheckSubtitlesLeft);
+            PBCheckSubtitles.Refresh();
+
+            PBVolume.Height = (int)(KHeight * VolumeHeight);
+            PBVolume.Width = (int)(KWidth * VolumeWidth);
+            PBVolume.Top = (int)(KHeight * VolumeTop);
+            PBVolume.Left = (int)(KWidth * VolumeLeft);
+            PBVolume.Refresh();
 
             PBResolution.Height = (int)(KHeight * ResolutionHeight);
             PBResolution.Width = (int)(KWidth * ResolutionWidth);
@@ -751,6 +886,7 @@ namespace Stay_Alone_интерфейс
 
             MinMaxReg();
             PBVolumeReg.Left = (int)(PosRegProc * (Max - Min) / 100 + Min); // Позиция регулятора от левого края формы в пикселях
+            PBSensitivityReg.Left = (int)(PosRegProcSens * (Max - Min) / 100 + Min); // Позиция регулятора от левого края формы в пикселях
         }
 
         private void PBVolumeReg_MouseMove(object sender, MouseEventArgs e)
@@ -759,9 +895,19 @@ namespace Stay_Alone_интерфейс
                 PBVolumeReg.Location = new Point((int)(Cursor.Position.X - Left - KWidth * 10), PBVolumeLine.Top);
 
             PosRegProc = (int)(100 * (PBVolumeReg.Left - Min) / (Max - Min)); // Позиция регулятора в процентах громкости
+            VolumeINI = PosRegProc;
 
             SystemVolumeConfigurator SVCClass = new SystemVolumeConfigurator(); // Вызываем класс SystemVolumeConfigurator из файла
             SVCClass.SetVolume(PosRegProc); // Вызываем из класса SystemVolumeConfigurator функцию SetVolume
+        }
+
+        private void PBSensitivityReg_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && Cursor.Position.X - Left >= Min && Cursor.Position.X - Left <= Max)
+                PBSensitivityReg.Location = new Point((int)(Cursor.Position.X - Left - KWidth * 10), PBSensitivityLine.Top);
+
+            PosRegProcSens = (int)(100 * (PBSensitivityReg.Left - Min) / (Max - Min)); // Позиция регулятора в процентах чувствительности мыши
+            SensINI = PosRegProcSens;
         }
     }
 }
