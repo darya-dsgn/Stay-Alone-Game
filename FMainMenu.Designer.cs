@@ -82,6 +82,13 @@
             this.PBGraphics2 = new System.Windows.Forms.PictureBox();
             this.PBControlL = new System.Windows.Forms.PictureBox();
             this.PBGeneral2 = new System.Windows.Forms.PictureBox();
+            this.CBResolutionValue = new System.Windows.Forms.ComboBox();
+            this.CBTextureQualityValue = new System.Windows.Forms.ComboBox();
+            this.CBTextureFilteringValue = new System.Windows.Forms.ComboBox();
+            this.CBShadowQualityValue = new System.Windows.Forms.ComboBox();
+            this.CBEffectQualityValue = new System.Windows.Forms.ComboBox();
+            this.CBSmoothingValue = new System.Windows.Forms.ComboBox();
+            this.PBCheckFS = new System.Windows.Forms.PictureBox();
             this.PMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBExit)).BeginInit();
@@ -133,6 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBGraphics2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBControlL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBGeneral2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCheckFS)).BeginInit();
             this.SuspendLayout();
             // 
             // PMain
@@ -261,10 +269,9 @@
             this.PSettingsGeneral.Controls.Add(this.PBControl1);
             this.PSettingsGeneral.Controls.Add(this.PBGraphics1);
             this.PSettingsGeneral.Controls.Add(this.PBGeneralL);
-            this.PSettingsGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PSettingsGeneral.Location = new System.Drawing.Point(0, 0);
+            this.PSettingsGeneral.Location = new System.Drawing.Point(263, 332);
             this.PSettingsGeneral.Name = "PSettingsGeneral";
-            this.PSettingsGeneral.Size = new System.Drawing.Size(600, 354);
+            this.PSettingsGeneral.Size = new System.Drawing.Size(103, 60);
             this.PSettingsGeneral.TabIndex = 3;
             // 
             // PBCheckSubtitles
@@ -314,7 +321,7 @@
             "Easy",
             "Normal",
             "Hard"});
-            this.CBDifficultyValue.Location = new System.Drawing.Point(382, 138);
+            this.CBDifficultyValue.Location = new System.Drawing.Point(382, 139);
             this.CBDifficultyValue.Name = "CBDifficultyValue";
             this.CBDifficultyValue.Size = new System.Drawing.Size(71, 46);
             this.CBDifficultyValue.TabIndex = 32;
@@ -470,10 +477,17 @@
             // 
             this.PSettingsGraphics.BackColor = System.Drawing.Color.Black;
             this.PSettingsGraphics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PSettingsGraphics.Controls.Add(this.PBSmoothing);
+            this.PSettingsGraphics.Controls.Add(this.PBCheckFS);
+            this.PSettingsGraphics.Controls.Add(this.CBSmoothingValue);
+            this.PSettingsGraphics.Controls.Add(this.CBEffectQualityValue);
+            this.PSettingsGraphics.Controls.Add(this.CBShadowQualityValue);
             this.PSettingsGraphics.Controls.Add(this.PBShadowQuality);
-            this.PSettingsGraphics.Controls.Add(this.PBEffectQuality);
             this.PSettingsGraphics.Controls.Add(this.PBTextureFiltering);
+            this.PSettingsGraphics.Controls.Add(this.CBTextureFilteringValue);
+            this.PSettingsGraphics.Controls.Add(this.CBTextureQualityValue);
+            this.PSettingsGraphics.Controls.Add(this.CBResolutionValue);
+            this.PSettingsGraphics.Controls.Add(this.PBSmoothing);
+            this.PSettingsGraphics.Controls.Add(this.PBEffectQuality);
             this.PSettingsGraphics.Controls.Add(this.PBResolution);
             this.PSettingsGraphics.Controls.Add(this.PBFullScreen);
             this.PSettingsGraphics.Controls.Add(this.PBTextureQuality);
@@ -482,9 +496,10 @@
             this.PSettingsGraphics.Controls.Add(this.PBControl2);
             this.PSettingsGraphics.Controls.Add(this.PBGraphicsL);
             this.PSettingsGraphics.Controls.Add(this.PBGeneral1);
-            this.PSettingsGraphics.Location = new System.Drawing.Point(372, 342);
+            this.PSettingsGraphics.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PSettingsGraphics.Location = new System.Drawing.Point(0, 0);
             this.PSettingsGraphics.Name = "PSettingsGraphics";
-            this.PSettingsGraphics.Size = new System.Drawing.Size(119, 89);
+            this.PSettingsGraphics.Size = new System.Drawing.Size(600, 354);
             this.PSettingsGraphics.TabIndex = 5;
             // 
             // PBSmoothing
@@ -566,6 +581,7 @@
             this.PBApply2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBApply2.TabIndex = 28;
             this.PBApply2.TabStop = false;
+            this.PBApply2.Click += new System.EventHandler(this.PBApply2_Click);
             // 
             // PBBack2
             // 
@@ -754,6 +770,128 @@
             this.PBGeneral2.TabStop = false;
             this.PBGeneral2.Click += new System.EventHandler(this.PBGeneral2_Click);
             // 
+            // CBResolutionValue
+            // 
+            this.CBResolutionValue.BackColor = System.Drawing.Color.Black;
+            this.CBResolutionValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBResolutionValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBResolutionValue.Font = new System.Drawing.Font("Papyrus", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CBResolutionValue.ForeColor = System.Drawing.Color.White;
+            this.CBResolutionValue.FormattingEnabled = true;
+            this.CBResolutionValue.Items.AddRange(new object[] {
+            "1920 x 1080",
+            "1600 x 900",
+            "1366 x 768",
+            "1280 x 1024",
+            "1024 x 768"});
+            this.CBResolutionValue.Location = new System.Drawing.Point(373, 84);
+            this.CBResolutionValue.Name = "CBResolutionValue";
+            this.CBResolutionValue.Size = new System.Drawing.Size(80, 46);
+            this.CBResolutionValue.TabIndex = 36;
+            this.CBResolutionValue.SelectedIndexChanged += new System.EventHandler(this.CBResolutionValue_SelectedIndexChanged);
+            // 
+            // CBTextureQualityValue
+            // 
+            this.CBTextureQualityValue.BackColor = System.Drawing.Color.Black;
+            this.CBTextureQualityValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBTextureQualityValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBTextureQualityValue.Font = new System.Drawing.Font("Papyrus", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CBTextureQualityValue.ForeColor = System.Drawing.Color.White;
+            this.CBTextureQualityValue.FormattingEnabled = true;
+            this.CBTextureQualityValue.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "High"});
+            this.CBTextureQualityValue.Location = new System.Drawing.Point(398, 114);
+            this.CBTextureQualityValue.Name = "CBTextureQualityValue";
+            this.CBTextureQualityValue.Size = new System.Drawing.Size(55, 46);
+            this.CBTextureQualityValue.TabIndex = 37;
+            this.CBTextureQualityValue.SelectedIndexChanged += new System.EventHandler(this.CBTextureQualityValue_SelectedIndexChanged);
+            // 
+            // CBTextureFilteringValue
+            // 
+            this.CBTextureFilteringValue.BackColor = System.Drawing.Color.Black;
+            this.CBTextureFilteringValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBTextureFilteringValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBTextureFilteringValue.Font = new System.Drawing.Font("Papyrus", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CBTextureFilteringValue.ForeColor = System.Drawing.Color.White;
+            this.CBTextureFilteringValue.FormattingEnabled = true;
+            this.CBTextureFilteringValue.Items.AddRange(new object[] {
+            "Bilinear",
+            "Trilinear",
+            "4x",
+            "8x",
+            "16x"});
+            this.CBTextureFilteringValue.Location = new System.Drawing.Point(398, 146);
+            this.CBTextureFilteringValue.Name = "CBTextureFilteringValue";
+            this.CBTextureFilteringValue.Size = new System.Drawing.Size(55, 46);
+            this.CBTextureFilteringValue.TabIndex = 38;
+            this.CBTextureFilteringValue.SelectedIndexChanged += new System.EventHandler(this.CBTextureFilteringValue_SelectedIndexChanged);
+            // 
+            // CBShadowQualityValue
+            // 
+            this.CBShadowQualityValue.BackColor = System.Drawing.Color.Black;
+            this.CBShadowQualityValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBShadowQualityValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBShadowQualityValue.Font = new System.Drawing.Font("Papyrus", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CBShadowQualityValue.ForeColor = System.Drawing.Color.White;
+            this.CBShadowQualityValue.FormattingEnabled = true;
+            this.CBShadowQualityValue.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "High"});
+            this.CBShadowQualityValue.Location = new System.Drawing.Point(398, 178);
+            this.CBShadowQualityValue.Name = "CBShadowQualityValue";
+            this.CBShadowQualityValue.Size = new System.Drawing.Size(55, 46);
+            this.CBShadowQualityValue.TabIndex = 39;
+            this.CBShadowQualityValue.SelectedIndexChanged += new System.EventHandler(this.CBShadowQualityValue_SelectedIndexChanged);
+            // 
+            // CBEffectQualityValue
+            // 
+            this.CBEffectQualityValue.BackColor = System.Drawing.Color.Black;
+            this.CBEffectQualityValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBEffectQualityValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBEffectQualityValue.Font = new System.Drawing.Font("Papyrus", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CBEffectQualityValue.ForeColor = System.Drawing.Color.White;
+            this.CBEffectQualityValue.FormattingEnabled = true;
+            this.CBEffectQualityValue.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "High"});
+            this.CBEffectQualityValue.Location = new System.Drawing.Point(398, 209);
+            this.CBEffectQualityValue.Name = "CBEffectQualityValue";
+            this.CBEffectQualityValue.Size = new System.Drawing.Size(55, 46);
+            this.CBEffectQualityValue.TabIndex = 40;
+            this.CBEffectQualityValue.SelectedIndexChanged += new System.EventHandler(this.CBEffectQualityValue_SelectedIndexChanged);
+            // 
+            // CBSmoothingValue
+            // 
+            this.CBSmoothingValue.BackColor = System.Drawing.Color.Black;
+            this.CBSmoothingValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBSmoothingValue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CBSmoothingValue.Font = new System.Drawing.Font("Papyrus", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CBSmoothingValue.ForeColor = System.Drawing.Color.White;
+            this.CBSmoothingValue.FormattingEnabled = true;
+            this.CBSmoothingValue.Items.AddRange(new object[] {
+            "FXAA",
+            "TXAA",
+            "SSAA"});
+            this.CBSmoothingValue.Location = new System.Drawing.Point(398, 239);
+            this.CBSmoothingValue.Name = "CBSmoothingValue";
+            this.CBSmoothingValue.Size = new System.Drawing.Size(55, 46);
+            this.CBSmoothingValue.TabIndex = 41;
+            this.CBSmoothingValue.SelectedIndexChanged += new System.EventHandler(this.CBSmoothingValue_SelectedIndexChanged);
+            // 
+            // PBCheckFS
+            // 
+            this.PBCheckFS.Location = new System.Drawing.Point(398, 266);
+            this.PBCheckFS.Name = "PBCheckFS";
+            this.PBCheckFS.Size = new System.Drawing.Size(25, 25);
+            this.PBCheckFS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBCheckFS.TabIndex = 42;
+            this.PBCheckFS.TabStop = false;
+            this.PBCheckFS.Click += new System.EventHandler(this.PBCheckFS_Click);
+            // 
             // FMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -825,6 +963,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBGraphics2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBControlL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBGeneral2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCheckFS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -883,6 +1022,13 @@
         private System.Windows.Forms.PictureBox PBSensitivityReg;
         private System.Windows.Forms.PictureBox PBSensitivityLine;
         private System.Windows.Forms.PictureBox PBCheckSubtitles;
+        private System.Windows.Forms.ComboBox CBResolutionValue;
+        private System.Windows.Forms.ComboBox CBTextureQualityValue;
+        private System.Windows.Forms.ComboBox CBTextureFilteringValue;
+        private System.Windows.Forms.ComboBox CBShadowQualityValue;
+        private System.Windows.Forms.ComboBox CBEffectQualityValue;
+        private System.Windows.Forms.ComboBox CBSmoothingValue;
+        private System.Windows.Forms.PictureBox PBCheckFS;
     }
 }
 

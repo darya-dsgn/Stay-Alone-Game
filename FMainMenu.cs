@@ -14,7 +14,8 @@ namespace Stay_Alone_интерфейс
 {
     public partial class FMainMenu : Form
     {
-        public string PathINI, LanguageINI, DifficultyINI, SubtitlesINI;
+        public string PathINI, LanguageINI, DifficultyINI, SubtitlesINI, ResolutionINI, TextureQualityINI, TextureFilteringINI;
+        public string ShadowQualityINI, EffectQualityINI, SmoothingINI, FSINI;
         public int SensINI, VolumeINI;
 
         public static float FormHeight, FormWidth, FormTop, FormLeft;
@@ -46,7 +47,21 @@ namespace Stay_Alone_интерфейс
                                                          "Subtitles:" + Environment.NewLine +
                                                          SubtitlesINI + Environment.NewLine +
                                                          "Volume Sound:" + Environment.NewLine +
-                                                         VolumeINI.ToString());
+                                                         VolumeINI.ToString() + Environment.NewLine +
+                                                         "Resolution:" + Environment.NewLine +
+                                                         ResolutionINI + Environment.NewLine +
+                                                         "Texture Quality:" + Environment.NewLine +
+                                                         TextureQualityINI + Environment.NewLine +
+                                                         "Texture Filtering:" + Environment.NewLine +
+                                                         TextureFilteringINI + Environment.NewLine +
+                                                         "Shadow Quality:" + Environment.NewLine +
+                                                         ShadowQualityINI + Environment.NewLine +
+                                                         "Effect Quality:" + Environment.NewLine +
+                                                         EffectQualityINI + Environment.NewLine +
+                                                         "Smoothing:" + Environment.NewLine +
+                                                         SmoothingINI + Environment.NewLine +
+                                                         "Full Screen:" + Environment.NewLine +
+                                                         FSINI);
         }
         private void CBLanguageValue_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,6 +69,69 @@ namespace Stay_Alone_интерфейс
             LanguageINI = CBLanguageValue.Text;
         }
         public float DifficultyValueHeight, DifficultyValueWidth, DifficultyValueTop, DifficultyValueLeft;
+        public float LanguageValueHeight, LanguageValueWidth, LanguageValueTop, LanguageValueLeft;
+        public float ResolutionValueHeight, ResolutionValueWidth, ResolutionValueTop, ResolutionValueLeft;
+        public float TextureQualityValueHeight, TextureQualityValueWidth, TextureQualityValueTop, TextureQualityValueLeft;
+        public float TextureFilteringValueHeight, TextureFilteringValueWidth, TextureFilteringValueTop, TextureFilteringValueLeft;
+        public float ShadowQualityValueHeight, ShadowQualityValueWidth, ShadowQualityValueTop, ShadowQualityValueLeft;
+        public float EffectQualityValueHeight, EffectQualityValueWidth, EffectQualityValueTop, EffectQualityValueLeft;
+        public float SmoothingValueHeight, SmoothingValueWidth, SmoothingValueTop, SmoothingValueLeft;
+
+        private void PBCheckFS_Click(object sender, EventArgs e)
+        {
+            if (PBCheckFS.Tag.ToString() == "No")
+            {
+                PBCheckFS.Image = Image.FromFile("Images\\CheckYes.png");
+                PBCheckFS.Tag = "Yes";
+            }
+            else
+            {
+                PBCheckFS.Image = Image.FromFile("Images\\CheckNo.png");
+                PBCheckFS.Tag = "No";
+            }
+            FSINI = PBCheckFS.Tag.ToString();
+        }
+
+        private void CBSmoothingValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PBResolution.Focus();
+            SmoothingINI = CBSmoothingValue.Text;
+        }
+
+        private void CBEffectQualityValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PBResolution.Focus();
+            EffectQualityINI = CBEffectQualityValue.Text;
+        }
+
+        private void CBShadowQualityValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PBResolution.Focus();
+            ShadowQualityINI = CBShadowQualityValue.Text;
+        }
+
+        private void CBTextureFilteringValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PBResolution.Focus();
+            TextureFilteringINI = CBTextureFilteringValue.Text;
+        }
+
+        private void CBTextureQualityValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PBResolution.Focus();
+            TextureQualityINI = CBTextureQualityValue.Text;
+        }
+
+        private void PBApply2_Click(object sender, EventArgs e)
+        {
+            SaveINI();
+        }
+
+        private void CBResolutionValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PBResolution.Focus();
+            ResolutionINI = CBResolutionValue.Text;
+        }
 
         private void PBApply1_Click(object sender, EventArgs e)
         {
@@ -65,8 +143,6 @@ namespace Stay_Alone_интерфейс
             PBDifficulty.Focus();
             DifficultyINI = CBDifficultyValue.Text;
         }
-
-        public float LanguageValueHeight, LanguageValueWidth, LanguageValueTop, LanguageValueLeft;
 
         private void PBCheckSubtitles_Click(object sender, EventArgs e)
         {
@@ -94,6 +170,7 @@ namespace Stay_Alone_интерфейс
         public float SensitivityHeight, SensitivityWidth, SensitivityTop, SensitivityLeft;
         public float SubtitlesHeight, SubtitlesWidth, SubtitlesTop, SubtitlesLeft;
         public float CheckSubtitlesHeight, CheckSubtitlesWidth, CheckSubtitlesTop, CheckSubtitlesLeft;
+        public float CheckFSHeight, CheckFSWidth, CheckFSTop, CheckFSLeft;
         public float VolumeHeight, VolumeWidth, VolumeTop, VolumeLeft;
 
         public float ResolutionHeight, ResolutionWidth, ResolutionTop, ResolutionLeft;
@@ -235,10 +312,27 @@ namespace Stay_Alone_интерфейс
                 PBCheckSubtitles.Image = Image.FromFile("Images\\Check" + SubtitlesINI + ".png");
                 PBCheckSubtitles.Tag = SubtitlesINI;
                 VolumeINI = int.Parse(File.ReadLines(PathINI).Skip(9).First()); // читаем 10ую строку из файла
+                ResolutionINI = File.ReadLines(PathINI).Skip(11).First(); // читаем 12ую строку из файла
+                CBResolutionValue.SelectedItem = ResolutionINI;
+                TextureQualityINI = File.ReadLines(PathINI).Skip(13).First(); // читаем 14ую строку из файла
+                CBTextureQualityValue.SelectedItem = TextureQualityINI;
+                TextureFilteringINI = File.ReadLines(PathINI).Skip(15).First(); // читаем 16ую строку из файла
+                CBTextureFilteringValue.SelectedItem = TextureFilteringINI;
+                ShadowQualityINI = File.ReadLines(PathINI).Skip(17).First(); // читаем 18ую строку из файла
+                CBShadowQualityValue.SelectedItem = ShadowQualityINI;
+                EffectQualityINI = File.ReadLines(PathINI).Skip(19).First(); // читаем 20ую строку из файла
+                CBEffectQualityValue.SelectedItem = EffectQualityINI;
+                SmoothingINI = File.ReadLines(PathINI).Skip(21).First(); // читаем 22ую строку из файла
+                CBSmoothingValue.SelectedItem = SmoothingINI;
+                FSINI = File.ReadLines(PathINI).Skip(23).First(); // читаем 24ую строку из файла
+                PBCheckFS.Image = Image.FromFile("Images\\Check" + FSINI + ".png");
+                PBCheckFS.Tag = FSINI;
             }
             catch (Exception) { }
 
             PBLanguage.Focus();
+            PBResolution.Focus();
+            PBSquat.Focus();
 
 
             Visible = false;
@@ -322,8 +416,6 @@ namespace Stay_Alone_интерфейс
 
             }
             catch (System.IO.FileNotFoundException) { }
-
-
 
 
             //Получаем исходные координаты формы и всех элементов:
@@ -497,35 +589,70 @@ namespace Stay_Alone_интерфейс
             ResolutionTop = PBResolution.Top;
             ResolutionLeft = PBResolution.Left;
 
+            ResolutionValueHeight = CBResolutionValue.Height;
+            ResolutionValueWidth = CBResolutionValue.Width;
+            ResolutionValueTop = CBResolutionValue.Top;
+            ResolutionValueLeft = CBResolutionValue.Left;
+
             TextureQualityHeight = PBTextureQuality.Height;
             TextureQualityWidth = PBTextureQuality.Width;
             TextureQualityTop = PBTextureQuality.Top;
             TextureQualityLeft = PBTextureQuality.Left;
+
+            TextureQualityValueHeight = CBTextureQualityValue.Height;
+            TextureQualityValueWidth = CBTextureQualityValue.Width;
+            TextureQualityValueTop = CBTextureQualityValue.Top;
+            TextureQualityValueLeft = CBTextureQualityValue.Left;
 
             TextureFilteringHeight = PBTextureFiltering.Height;
             TextureFilteringWidth = PBTextureFiltering.Width;
             TextureFilteringTop = PBTextureFiltering.Top;
             TextureFilteringLeft = PBTextureFiltering.Left;
 
+            TextureFilteringValueHeight = CBTextureFilteringValue.Height;
+            TextureFilteringValueWidth = CBTextureFilteringValue.Width;
+            TextureFilteringValueTop = CBTextureFilteringValue.Top;
+            TextureFilteringValueLeft = CBTextureFilteringValue.Left;
+
             ShadowQualityHeight = PBShadowQuality.Height;
             ShadowQualityWidth = PBShadowQuality.Width;
             ShadowQualityTop = PBShadowQuality.Top;
             ShadowQualityLeft = PBShadowQuality.Left;
+
+            ShadowQualityValueHeight = CBShadowQualityValue.Height;
+            ShadowQualityValueWidth = CBShadowQualityValue.Width;
+            ShadowQualityValueTop = CBShadowQualityValue.Top;
+            ShadowQualityValueLeft = CBShadowQualityValue.Left;
 
             EffectQualityHeight = PBEffectQuality.Height;
             EffectQualityWidth = PBEffectQuality.Width;
             EffectQualityTop = PBEffectQuality.Top;
             EffectQualityLeft = PBEffectQuality.Left;
 
+            EffectQualityValueHeight = CBEffectQualityValue.Height;
+            EffectQualityValueWidth = CBEffectQualityValue.Width;
+            EffectQualityValueTop = CBEffectQualityValue.Top;
+            EffectQualityValueLeft = CBEffectQualityValue.Left;
+
             SmoothingHeight = PBSmoothing.Height;
             SmoothingWidth = PBSmoothing.Width;
             SmoothingTop = PBSmoothing.Top;
             SmoothingLeft = PBSmoothing.Left;
 
+            SmoothingValueHeight = CBSmoothingValue.Height;
+            SmoothingValueWidth = CBSmoothingValue.Width;
+            SmoothingValueTop = CBSmoothingValue.Top;
+            SmoothingValueLeft = CBSmoothingValue.Left;
+
             FullScreenHeight = PBFullScreen.Height;
             FullScreenWidth = PBFullScreen.Width;
             FullScreenTop = PBFullScreen.Top;
             FullScreenLeft = PBFullScreen.Left;
+
+            CheckFSHeight = PBCheckFS.Height;
+            CheckFSWidth = PBCheckFS.Width;
+            CheckFSTop = PBCheckFS.Top;
+            CheckFSLeft = PBCheckFS.Left;
 
             SquatHeight = PBSquat.Height;
             SquatWidth = PBSquat.Width;
@@ -794,11 +921,23 @@ namespace Stay_Alone_интерфейс
             PBResolution.Left = (int)(KWidth * ResolutionLeft);
             PBResolution.Refresh();
 
+            CBResolutionValue.Height = (int)(KHeight * ResolutionValueHeight);
+            CBResolutionValue.Width = (int)(KWidth * ResolutionValueWidth);
+            CBResolutionValue.Top = (int)(KHeight * ResolutionValueTop);
+            CBResolutionValue.Left = (int)(KWidth * ResolutionValueLeft);
+            CBResolutionValue.Refresh();
+
             PBTextureQuality.Height = (int)(KHeight * TextureQualityHeight);
             PBTextureQuality.Width = (int)(KWidth * TextureQualityWidth);
             PBTextureQuality.Top = (int)(KHeight * TextureQualityTop);
             PBTextureQuality.Left = (int)(KWidth * TextureQualityLeft);
             PBTextureQuality.Refresh();
+
+            CBTextureQualityValue.Height = (int)(KHeight * TextureQualityValueHeight);
+            CBTextureQualityValue.Width = (int)(KWidth * TextureQualityValueWidth);
+            CBTextureQualityValue.Top = (int)(KHeight * TextureQualityValueTop);
+            CBTextureQualityValue.Left = (int)(KWidth * TextureQualityValueLeft);
+            CBTextureQualityValue.Refresh();
 
             PBTextureFiltering.Height = (int)(KHeight * TextureFilteringHeight);
             PBTextureFiltering.Width = (int)(KWidth * TextureFilteringWidth);
@@ -806,11 +945,23 @@ namespace Stay_Alone_интерфейс
             PBTextureFiltering.Left = (int)(KWidth * TextureFilteringLeft);
             PBTextureFiltering.Refresh();
 
+            CBTextureFilteringValue.Height = (int)(KHeight * TextureFilteringValueHeight);
+            CBTextureFilteringValue.Width = (int)(KWidth * TextureFilteringValueWidth);
+            CBTextureFilteringValue.Top = (int)(KHeight * TextureFilteringValueTop);
+            CBTextureFilteringValue.Left = (int)(KWidth * TextureFilteringValueLeft);
+            CBTextureFilteringValue.Refresh();
+
             PBShadowQuality.Height = (int)(KHeight * ShadowQualityHeight);
             PBShadowQuality.Width = (int)(KWidth * ShadowQualityWidth);
             PBShadowQuality.Top = (int)(KHeight * ShadowQualityTop);
             PBShadowQuality.Left = (int)(KWidth * ShadowQualityLeft);
             PBShadowQuality.Refresh();
+
+            CBShadowQualityValue.Height = (int)(KHeight * ShadowQualityValueHeight);
+            CBShadowQualityValue.Width = (int)(KWidth * ShadowQualityValueWidth);
+            CBShadowQualityValue.Top = (int)(KHeight * ShadowQualityValueTop);
+            CBShadowQualityValue.Left = (int)(KWidth * ShadowQualityValueLeft);
+            CBShadowQualityValue.Refresh();
 
             PBEffectQuality.Height = (int)(KHeight * EffectQualityHeight);
             PBEffectQuality.Width = (int)(KWidth * EffectQualityWidth);
@@ -818,17 +969,35 @@ namespace Stay_Alone_интерфейс
             PBEffectQuality.Left = (int)(KWidth * EffectQualityLeft);
             PBEffectQuality.Refresh();
 
+            CBEffectQualityValue.Height = (int)(KHeight * EffectQualityValueHeight);
+            CBEffectQualityValue.Width = (int)(KWidth * EffectQualityValueWidth);
+            CBEffectQualityValue.Top = (int)(KHeight * EffectQualityValueTop);
+            CBEffectQualityValue.Left = (int)(KWidth * EffectQualityValueLeft);
+            CBEffectQualityValue.Refresh();
+
             PBSmoothing.Height = (int)(KHeight * SmoothingHeight);
             PBSmoothing.Width = (int)(KWidth * SmoothingWidth);
             PBSmoothing.Top = (int)(KHeight * SmoothingTop);
             PBSmoothing.Left = (int)(KWidth * SmoothingLeft);
             PBSmoothing.Refresh();
 
+            CBSmoothingValue.Height = (int)(KHeight * SmoothingValueHeight);
+            CBSmoothingValue.Width = (int)(KWidth * SmoothingValueWidth);
+            CBSmoothingValue.Top = (int)(KHeight * SmoothingValueTop);
+            CBSmoothingValue.Left = (int)(KWidth * SmoothingValueLeft);
+            CBSmoothingValue.Refresh();
+
             PBFullScreen.Height = (int)(KHeight * FullScreenHeight);
             PBFullScreen.Width = (int)(KWidth * FullScreenWidth);
             PBFullScreen.Top = (int)(KHeight * FullScreenTop);
             PBFullScreen.Left = (int)(KWidth * FullScreenLeft);
             PBFullScreen.Refresh();
+
+            PBCheckFS.Height = (int)(KHeight * CheckFSHeight);
+            PBCheckFS.Width = (int)(KWidth * CheckFSWidth);
+            PBCheckFS.Top = (int)(KHeight * CheckFSTop);
+            PBCheckFS.Left = (int)(KWidth * CheckFSLeft);
+            PBCheckFS.Refresh();
 
             PBSquat.Height = (int)(KHeight * SquatHeight);
             PBSquat.Width = (int)(KWidth * SquatWidth);
